@@ -1185,7 +1185,7 @@
 	food_effects = list("food_refreshed","food_cold")
 
 /obj/item/reagent_containers/food/snacks/plant/belladonnaberry/
-	name = "belladonna-berry"
+	name = "belladonna berry"
 	desc = "Wait, This is not a blueberry."
 	icon_state = "belladonna-berry"
 	planttype = /datum/plant/fruit/nightshade
