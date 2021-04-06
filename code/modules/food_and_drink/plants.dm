@@ -1184,6 +1184,15 @@
 	heal_amt = 2
 	food_effects = list("food_refreshed","food_cold")
 
+/obj/item/reagent_containers/food/snacks/plant/belladonna-berry/
+	name = "belladonna-berry"
+	desc = "Wait, This is not a blueberry."
+	icon_state = "belladonna-berry"
+	planttype = /datum/plant/fruit/nightshade
+	amount = 1
+	food_color = "#13003A"
+	plant_reagent = "belladonnine"
+
 /obj/item/reagent_containers/food/snacks/plant/eggplant
 	name = "eggplant"
 	desc = "A close relative of the tomato and potato, the eggplant is notable for being large and purple."
