@@ -224,7 +224,7 @@ datum
 				M.take_toxin_damage(1 * mult)
 				if (prob(30))
 					M.emote("eyes widen")
-					H.change_eye_blurry(10 , 50)
+					M.change_eye_blurry(10 , 50)
 				if (prob(20))
 					boutput(M, "<span class='alert'>You cannot breathe!</span>")
 					M.losebreath += (1 * mult)
@@ -236,7 +236,7 @@ datum
 					M.setStatus("weakened", max(M.getStatusDuration("weakened"), 25 * mult))
 				if (prob(5))
 					boutput(M, "<span class='alert'><B>Your heart aches!</B></span>")
-					H.contract_disease(/datum/ailment/malady/heartdisease,null,null,1)
+					M.contract_disease(/datum/ailment/malady/heartdisease,null,null,1)
 				..()
 				return
 		
