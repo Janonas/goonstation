@@ -275,7 +275,7 @@ ABSTRACT_TYPE(/datum/plant/fruit)
 /datum/plant/fruit/nightshade
 	name = "Nightshade"
 	seedcolor = "#13003A"
-	crop = /obj/item/reagent_containers/food/snacks/plant/belladonna-berry
+	crop = /obj/item/reagent_containers/food/snacks/plant/belladonnaberry
 	starthealth = 20
 	growtime = 80
 	harvtime = 130
