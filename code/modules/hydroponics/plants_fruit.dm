@@ -272,6 +272,20 @@ ABSTRACT_TYPE(/datum/plant/fruit)
 	nectarlevel = 10
 	assoc_reagents = list("juice_blueberry")
 
+/datum/plant/fruit/nightshade
+	name = "Nightshade"
+	seedcolor = "#13003A"
+	crop = /obj/item/reagent_containers/food/snacks/plant/belladonna-berry
+	starthealth = 20
+	growtime = 80
+	harvtime = 130
+	cropsize = 3
+	harvests = 2
+	endurance = 1
+	genome = 19
+	nectarlevel = 15
+	assoc_reagents = list("belladonnine")
+
 /datum/plant/fruit/coconut
 	name = "Coconut"
 	seedcolor = "#4D2600"
