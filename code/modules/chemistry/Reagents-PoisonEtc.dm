@@ -236,7 +236,7 @@ datum
 					M.setStatus("weakened", max(M.getStatusDuration("weakened"), 25 * mult))
 				if (prob(5))
 					boutput(M, "<span class='alert'><B>Your heart aches!</B></span>")
-					M.contract_disease(/datum/ailment/malady/heartdisease,null,null,1)
+					M.contract_disease(/datum/ailment/malady/heartdisease, null, null, 1)
 				..()
 				return
 		
