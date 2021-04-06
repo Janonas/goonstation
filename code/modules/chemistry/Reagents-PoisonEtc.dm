@@ -219,7 +219,7 @@ datum
 			transparency = 200
 			depletion_rate = 0.2
 
-			on_mob_life(var/mob/M, var/mult = 1)
+			on_mob_life(var/mob/living/M, var/mult = 1)
 				if (!M) M = holder.my_atom
 				M.take_toxin_damage(1 * mult)
 				if (prob(30))
