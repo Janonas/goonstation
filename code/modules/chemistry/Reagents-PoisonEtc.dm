@@ -201,6 +201,34 @@ datum
 					M.take_toxin_damage(damage_counter + (rand(2,3)))
 
 
+		harmful/belladonnine
+			name = "belladonnine"
+			id = "belladonnine"
+			description = "A poison naturally found in nightshade."
+			fluid_r = 15
+			fluid_g = 0
+			fluid_b = 45
+			reagent_state = LIQUID
+			transparency = 200
+			depletion_rate = 0.1
+
+			on_mob_life(var/mob/M, var/mult = 1)
+				if (!M) M = holder.my_atom
+				M.take_toxin_damage(1 * mult)
+				if (prob(10))
+					M.emote("eyes widen")
+				if (prob(20))
+					boutput(M, "<span class='alert'>You cannot breathe!</span>")
+					M.losebreath += (1 * mult)
+					M.take_oxygen_deprivation(1 * mult)
+					M.emote("gasp")
+				if (prob(8))
+					boutput(M, "<span class='alert'><B>Your heart flutters in your chest!</B></span>")
+					M.take_oxygen_deprivation(1 * mult)
+					M.setStatus("weakened", max(M.getStatusDuration("weakened"), 25 * mult))
+				..()
+				return
+		
 		harmful/chemilin
 			name = "chemilin"
 			id = "chemilin"
