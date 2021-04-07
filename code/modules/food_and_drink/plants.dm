@@ -731,7 +731,6 @@
 	brew_result = "cider" // pear cider is delicious, fuck you.
 	food_color = "#3FB929"
 
-
 /obj/item/reagent_containers/food/snacks/plant/pear/sickly
 	name = "sickly pear"
 	desc = "You'd definitely become terribly ill if you ate this."
@@ -1192,6 +1191,15 @@
 	amount = 1
 	food_color = "#13003A"
 	plant_reagent = "belladonnine"
+
+/obj/item/reagent_containers/food/snacks/plant/belladonnaberry/
+	name = "belladonna berry"
+	desc = "Wait, This is not a blueberry."
+	icon_state = "sleep-belladonna-berry"
+	planttype = /datum/plant/fruit/nightshade/sleepy
+	amount = 1
+	food_color = "#30003A"
+	plant_reagent = "sulfonal"
 
 /obj/item/reagent_containers/food/snacks/plant/eggplant
 	name = "eggplant"
