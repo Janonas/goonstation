@@ -1200,6 +1200,15 @@
 	amount = 1
 	food_color = "#30003A"
 	plant_reagent = "sulfonal"
+	
+/obj/item/reagent_containers/food/snacks/plant/goodbelladonnaberry/
+	name = "belladonna berry"
+	desc = "Is this is some kind of pinkberry?."
+	icon_state = "good-belladonna-berry"
+	planttype = /datum/plant/fruit/nightshade/good
+	amount = 1
+	food_color = "#E83776"
+	plant_reagent = "haloperidol"
 
 /obj/item/reagent_containers/food/snacks/plant/eggplant
 	name = "eggplant"
