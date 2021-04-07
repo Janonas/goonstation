@@ -1185,7 +1185,7 @@
 
 /obj/item/reagent_containers/food/snacks/plant/belladonnaberry
 	name = "belladonna berry"
-	desc = "Wait, This is not a blueberry."
+	desc = "Wait, this is not a blueberry."
 	icon_state = "belladonna-berry"
 	planttype = /datum/plant/fruit/nightshade/
 	amount = 1
