@@ -234,7 +234,7 @@ datum
 					boutput(M, "<span class='alert'><B>Your heart flutters in your chest!</B></span>")
 					M.take_oxygen_deprivation(1 * mult)
 					M.setStatus("weakened", max(M.getStatusDuration("weakened"), 25 * mult))
-				if (prob(5))
+				if (prob(10))
 					boutput(M, "<span class='alert'><B>Your heart aches!</B></span>")
 					if (ishuman(M))
 					var/mob/living/carbon/human/H = M
