@@ -285,6 +285,7 @@ ABSTRACT_TYPE(/datum/plant/fruit)
 	genome = 19
 	nectarlevel = 15
 	assoc_reagents = list("belladonnine")
+	mutations = list(/datum/plantmutation/nightshade/sleepy, /datum/plantmutation/nightshade/good)
 
 /datum/plant/fruit/coconut
 	name = "Coconut"
