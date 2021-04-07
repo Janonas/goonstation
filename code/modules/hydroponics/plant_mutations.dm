@@ -215,7 +215,7 @@
 	
 // Nightshade Mutations
 
-/datum/plantmutation/nightshade/sleep
+/datum/plantmutation/nightshade/sleepy
 	name = "Goodnightshade"
 	dont_rename_crop = true
 	name_prefix = "sleepy "
