@@ -1208,7 +1208,7 @@
 	planttype = /datum/plant/fruit/nightshade/good
 	amount = 1
 	food_color = "#E83776"
-	plant_reagent = "haloperidol"
+	plant_reagent = "love"
 
 /obj/item/reagent_containers/food/snacks/plant/eggplant
 	name = "eggplant"
