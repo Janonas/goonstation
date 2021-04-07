@@ -20,3 +20,19 @@ ABSTRACT_TYPE(/datum/plant/flower)
 	force_seed_on_harvest = 1
 	mutations = list()
 	commuts = list(/datum/plant_gene_strain/immunity_radiation,/datum/plant_gene_strain/damage_res/bad)
+
+/datum/plant/flower/sunflower
+	name = "Sunflower"
+	seedcolor = "#EEDA00"
+	crop = /obj/item/plant/flower/sunflower
+	starthealth = 30
+	growtime = 40
+	harvtime = 100
+	cropsize = 1
+	harvests = 1
+	endurance = 0
+	nectarlevel = 13
+	genome = 8
+	force_seed_on_harvest = 1
+	mutations = list()
+	assoc_reagents = list("oil")
