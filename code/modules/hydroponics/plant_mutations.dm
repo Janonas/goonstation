@@ -234,7 +234,7 @@
 	crop = /obj/item/reagent_containers/food/snacks/plant/goodbelladonnaberry
 	ENrange = list(50,null)
 	chance = 15
-	assoc_reagents = list("haloperidol")
+	assoc_reagents = list("love")
 
 // Wheat Mutations
 
