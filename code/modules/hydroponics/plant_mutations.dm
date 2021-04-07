@@ -233,6 +233,33 @@
 	ENrange = list(25,null)
 	chance = 15
 	assoc_reagents = list("love")
+	
+// Sunflower Mutations
+
+/datum/plantmutation/sunflower/uv
+	name = "UV Sunflower"
+	dont_rename_crop = true
+	iconmod = "UVSunflower"
+	crop = /obj/item/plant/flower/uvsunflower
+	PTrange = list(75,null)
+	chance = 20
+
+/datum/plantmutation/sunflower/stun
+	name = "Stunflower"
+	dont_rename_crop = true
+	iconmod = "Stunflower"
+	crop = /obj/item/plant/flower/stunflower
+	PTrange = list(50,null)
+	ENrange = list(25,null)
+	chance = 10
+
+/datum/plantmutation/sunflower/moon
+	name = "Moonflower"
+	dont_rename_crop = true
+	iconmod = "Moonflower"
+	crop = /obj/item/plant/flower/moonflower
+	chance = 10
+	assoc_reagents = list("sulfur")
 
 // Wheat Mutations
 
