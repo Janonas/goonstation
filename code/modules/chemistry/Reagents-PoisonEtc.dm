@@ -239,7 +239,7 @@ datum
 					if (ishuman(M))
 						var/mob/living/carbon/human/H = M
 						if (H.organHolder)
-							H.organHolder.damage_organ(0, 0, 1*mult, "heart")
+							H.organHolder.damage_organ(0, 0, 2*mult, "heart")
 				..()
 				return
 		
