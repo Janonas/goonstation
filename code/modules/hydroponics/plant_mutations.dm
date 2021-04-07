@@ -216,15 +216,25 @@
 // Nightshade Mutations
 
 /datum/plantmutation/nightshade/sleepy
-	name = "Goodnightshade"
+	name = "Goodnight-shade"
 	dont_rename_crop = true
 	name_prefix = "sleepy "
-	iconmod = "sleep-belladonna-berry"
+	iconmod = "SNightshade"
 	crop = /obj/item/reagent_containers/food/snacks/plant/sleepbelladonnaberry
 	PTrange = list(50,null)
 	ENrange = list(null,50)
 	chance = 15
 	assoc_reagents = list("sulfonal")
+	
+/datum/plantmutation/nightshade/good
+	name = "Good Nightshade"
+	dont_rename_crop = true
+	name_prefix = "pink "
+	iconmod = "GNightshade"
+	crop = /obj/item/reagent_containers/food/snacks/plant/goodbelladonnaberry
+	ENrange = list(50,null)
+	chance = 15
+	assoc_reagents = list("haloperidol")
 
 // Wheat Mutations
 
