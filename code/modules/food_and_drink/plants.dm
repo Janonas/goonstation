@@ -1187,8 +1187,9 @@
 	name = "belladonna berry"
 	desc = "Wait, This is not a blueberry."
 	icon_state = "belladonna-berry"
-	planttype = /datum/plant/fruit/nightshade
+	planttype = /datum/plant/fruit/nightshade/
 	amount = 1
+	heal_amt = -1
 	food_color = "#13003A"
 	plant_reagent = "belladonnine"
 
@@ -1196,8 +1197,8 @@
 	name = "belladonna berry"
 	desc = "This is definitely not a blueberry, the moon makes it obvious."
 	icon_state = "sleep-belladonna-berry"
-	planttype = /datum/plant/fruit/nightshade/sleepy
 	amount = 1
+	heal_amt = -1
 	food_color = "#30003A"
 	plant_reagent = "sulfonal"
 	
@@ -1205,8 +1206,8 @@
 	name = "belladonna berry"
 	desc = "Is this is some kind of pinkberry?."
 	icon_state = "good-belladonna-berry"
-	planttype = /datum/plant/fruit/nightshade/good
 	amount = 1
+	heal_amt = 1
 	food_color = "#E83776"
 	plant_reagent = "love"
 
