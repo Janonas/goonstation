@@ -222,8 +222,8 @@ datum
 			on_mob_life(var/mob/living/M, var/mult = 1)
 				if (!M) M = holder.my_atom
 				M.take_toxin_damage(1 * mult)
-				if (prob(30))
-					M.emote("eyes widen")
+				if (prob(40))
+					M.visible_message("<span class='alert'><b>[M.name]'s</b> eyes dilate!</span>")
 					M.change_eye_blurry(10 , 50)
 				if (prob(20))
 					boutput(M, "<span class='alert'>You cannot breathe!</span>")
@@ -236,7 +236,10 @@ datum
 					M.setStatus("weakened", max(M.getStatusDuration("weakened"), 25 * mult))
 				if (prob(5))
 					boutput(M, "<span class='alert'><B>Your heart aches!</B></span>")
-					M.contract_disease(/datum/ailment/malady/heartdisease, null, null, 1)
+					if (ishuman(M))
+					var/mob/living/carbon/human/H = M
+					if (H.organHolder)
+						H.organHolder.damage_organ(0, 0, 1*mult, "heart")
 				..()
 				return
 		
