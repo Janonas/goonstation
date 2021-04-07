@@ -1192,9 +1192,9 @@
 	food_color = "#13003A"
 	plant_reagent = "belladonnine"
 
-/obj/item/reagent_containers/food/snacks/plant/belladonnaberry/
+/obj/item/reagent_containers/food/snacks/plant/sleepbelladonnaberry/
 	name = "belladonna berry"
-	desc = "Wait, This is not a blueberry."
+	desc = "This is definitely not a blueberry, the moon makes it obvious."
 	icon_state = "sleep-belladonna-berry"
 	planttype = /datum/plant/fruit/nightshade/sleepy
 	amount = 1
