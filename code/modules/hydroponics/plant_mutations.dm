@@ -218,7 +218,6 @@
 /datum/plantmutation/nightshade/sleepy
 	name = "Goodnight-shade"
 	dont_rename_crop = true
-	name_prefix = "Goodnight "
 	iconmod = "SNightshade"
 	crop = /obj/item/reagent_containers/food/snacks/plant/belladonnaberry/sleepy
 	PTrange = list(50,null)
@@ -229,7 +228,6 @@
 /datum/plantmutation/nightshade/good
 	name = "Good Nightshade"
 	dont_rename_crop = true
-	name_prefix = "Good "
 	iconmod = "GNightshade"
 	crop = /obj/item/reagent_containers/food/snacks/plant/belladonnaberry/good
 	ENrange = list(25,null)
