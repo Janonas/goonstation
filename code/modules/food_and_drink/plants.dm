@@ -1183,7 +1183,7 @@
 	heal_amt = 2
 	food_effects = list("food_refreshed","food_cold")
 
-/obj/item/reagent_containers/food/snacks/plant/belladonnaberry/
+/obj/item/reagent_containers/food/snacks/plant/belladonnaberry
 	name = "belladonna berry"
 	desc = "Wait, This is not a blueberry."
 	icon_state = "belladonna-berry"
@@ -1192,7 +1192,7 @@
 	food_color = "#13003A"
 	plant_reagent = "belladonnine"
 
-/obj/item/reagent_containers/food/snacks/plant/sleepbelladonnaberry/
+/obj/item/reagent_containers/food/snacks/plant/belladonnaberry/sleepy
 	name = "belladonna berry"
 	desc = "This is definitely not a blueberry, the moon makes it obvious."
 	icon_state = "sleep-belladonna-berry"
@@ -1201,7 +1201,7 @@
 	food_color = "#30003A"
 	plant_reagent = "sulfonal"
 	
-/obj/item/reagent_containers/food/snacks/plant/goodbelladonnaberry/
+/obj/item/reagent_containers/food/snacks/plant/belladonnaberry/good
 	name = "belladonna berry"
 	desc = "Is this is some kind of pinkberry?."
 	icon_state = "good-belladonna-berry"
