@@ -231,15 +231,13 @@ datum
 					M.take_oxygen_deprivation(1 * mult)
 					M.emote("gasp")
 				if (prob(10))
-					boutput(M, "<span class='alert'><B>Your heart flutters in your chest!</B></span>")
+					boutput(M, "<span class='alert'><B>Your heart aches and flutters in your chest!</B></span>")
 					M.take_oxygen_deprivation(1 * mult)
-					M.setStatus("weakened", max(M.getStatusDuration("weakened"), 25 * mult))
-				if (prob(10))
-					boutput(M, "<span class='alert'><B>Your heart aches!</B></span>")
+					M.setStatus("weakened", max(M.getStatusDuration("weakened"), 20 * mult))
 					if (ishuman(M))
 						var/mob/living/carbon/human/H = M
 						if (H.organHolder)
-							H.organHolder.damage_organ(0, 0, 2*mult, "heart")
+							H.organHolder.damage_organ(0, 0, 3*mult, "heart")
 				..()
 				return
 		
