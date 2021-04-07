@@ -31,7 +31,7 @@ ABSTRACT_TYPE(/datum/plant/flower)
 	cropsize = 1
 	harvests = 1
 	endurance = 0
-	nectarlevel = 13
+	nectarlevel = 4
 	genome = 8
 	force_seed_on_harvest = 1
 	mutations = list()
