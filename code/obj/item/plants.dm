@@ -451,11 +451,48 @@
 	name = "UV sunflower"
 	desc = "This nice flower resembles the sun, it even glows!"
 	icon_state = "UVsunflower"
+	var/datum/light/light
+	var/on = 1
+
+	New()
+		..()
+		light = new /datum/light/point
+		light.set_brightness(1)
+		light.set_height(1)
+		light.set_color(0.7, 0.2, 1)
+		light.attach(src)
+
+	pickup(mob/user)
+		..()
+		light.attach(user)
+
+	dropped(mob/user)
+		..()
+		SPAWN_DBG(0)
+			if (src.loc != user)
+				light.attach(src)
 	
 /obj/item/plant/flower/stunflower
 	name = "stunflower"
 	desc = "Is- is this an organic stun baton?"
 	icon_state = "stunflower"
+	attack_hand(var/mob/user as mob)                   
+	HasEntered(AM as mob|obj)
+		var/mob/M = AM
+		if (prob(10))
+			M.changeStatus("weakened",5)
+			M:stamina -= 10
+			M.visible_message("<span class='alert'>[M] accidentally zaps himself with the [src]!</span>")
+			return
+		..()
+	attack(mob/M as mob, mob/user as mob)
+		M.take_toxin_damage(rand(5,10))
+		user.visible_message("[user] attacks [M] with the [src]!")
+		M.changeStatus("weakened",5)
+		M:stamina -= 10
+		return
+		..()
+		return
 	
 /obj/item/plant/flower/moonflower
 	name = "moonflower"
