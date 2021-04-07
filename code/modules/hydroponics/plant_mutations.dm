@@ -222,7 +222,7 @@
 	iconmod = "SNightshade"
 	crop = /obj/item/reagent_containers/food/snacks/plant/belladonnaberry/sleepy
 	PTrange = list(50,null)
-	ENrange = list(null,30)
+	ENrange = list(null,25)
 	chance = 15
 	assoc_reagents = list("sulfonal")
 	
@@ -232,7 +232,7 @@
 	name_prefix = "Good "
 	iconmod = "GNightshade"
 	crop = /obj/item/reagent_containers/food/snacks/plant/belladonnaberry/good
-	ENrange = list(30,null)
+	ENrange = list(25,null)
 	chance = 15
 	assoc_reagents = list("love")
 
