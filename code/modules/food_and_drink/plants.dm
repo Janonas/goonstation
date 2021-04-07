@@ -1204,7 +1204,7 @@
 	
 /obj/item/reagent_containers/food/snacks/plant/belladonnaberry/good
 	name = "belladonna berry"
-	desc = "Is this is some kind of pinkberry?."
+	desc = "This is definitely not a blueberry, the pink color makes it obvious."
 	icon_state = "good-belladonna-berry"
 	amount = 1
 	heal_amt = 1
