@@ -220,7 +220,7 @@
 	dont_rename_crop = true
 	name_prefix = "sleepy "
 	iconmod = "SNightshade"
-	crop = /obj/item/reagent_containers/food/snacks/plant/sleepbelladonnaberry
+	crop = /obj/item/reagent_containers/food/snacks/plant/belladonnaberry/sleepy
 	PTrange = list(50,null)
 	ENrange = list(null,50)
 	chance = 15
@@ -231,7 +231,7 @@
 	dont_rename_crop = true
 	name_prefix = "pink "
 	iconmod = "GNightshade"
-	crop = /obj/item/reagent_containers/food/snacks/plant/goodbelladonnaberry
+	crop = /obj/item/reagent_containers/food/snacks/plant/belladonnaberry/good
 	ENrange = list(50,null)
 	chance = 15
 	assoc_reagents = list("love")
