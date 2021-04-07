@@ -212,6 +212,19 @@
 	name_prefix = "free range "
 	iconmod = "EggplantEggs"
 	crop = /obj/item/reagent_containers/food/snacks/ingredient/egg
+	
+// Nightshade Mutations
+
+/datum/plantmutation/nightshade/sleep
+	name = "Goodnightshade"
+	dont_rename_crop = true
+	name_prefix = "sleepy "
+	iconmod = "sleep-belladonna-berry"
+	crop = /obj/item/reagent_containers/food/snacks/plant/sleepbelladonnaberry
+	PTrange = list(50,null)
+	ENrange = list(null,50)
+	chance = 15
+	assoc_reagents = list("sulfonal")
 
 // Wheat Mutations
 
