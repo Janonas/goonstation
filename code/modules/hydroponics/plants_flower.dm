@@ -34,5 +34,5 @@ ABSTRACT_TYPE(/datum/plant/flower)
 	nectarlevel = 4
 	genome = 8
 	force_seed_on_harvest = 1
-	mutations = list(/datum/plantmutation/sunflower/uvsunflower)
+	mutations = list(/datum/plantmutation/sunflower/uv)
 	assoc_reagents = list("oil")
