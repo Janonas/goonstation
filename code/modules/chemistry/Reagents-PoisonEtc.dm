@@ -237,9 +237,9 @@ datum
 				if (prob(10))
 					boutput(M, "<span class='alert'><B>Your heart aches!</B></span>")
 					if (ishuman(M))
-					var/mob/living/carbon/human/H = M
-					if (H.organHolder)
-						H.organHolder.damage_organ(0, 0, 1*mult, "heart")
+						var/mob/living/carbon/human/H = M
+						if (H.organHolder)
+							H.organHolder.damage_organ(0, 0, 1*mult, "heart")
 				..()
 				return
 		
