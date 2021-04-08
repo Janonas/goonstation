@@ -249,13 +249,12 @@
 
 	New(var/obj/machinery/plantpot/POT)
 		..()
-		var/datum/plant/PO = POT.current
 		light = new /datum/light/point
 		light.attach(src)
 		light.set_brightness(1)
 		light.set_height(1)
 		light.set_color(0.7, 0.2, 1)
-		if(!PO.dead)
+		if(!POT.dead)
 			light.enable()
 		else
 			light.disable()
@@ -263,9 +262,8 @@
 	HYPspecial_proc_M(var/obj/machinery/plantpot/POT)
 		..()
 		if (.) return
-		var/datum/plant/PO = POT.current
 		var/datum/plantgenes/DNAO = POT.plantgenes
-		if(!PO.dead)
+		if(!POT.dead)
 			for (var/obj/machinery/plantpot/P in view(2,src))
 				if(!P.current || P.dead)
 					continue
