@@ -242,16 +242,6 @@
 	chance = 20
 	special_proc_override = 1
 	var/obj/machinery/plantpot/POT
-	var/datum/light/light
-
-	New()
-		..()
-		light = new /datum/light/point
-		light.attach(src)
-		light.set_brightness(1)
-		light.set_height(1)
-		light.set_color(0.7, 0.2, 1)
-		light.enable()
 
 	HYPspecial_proc_M(var/obj/machinery/plantpot/POT)
 		..()
