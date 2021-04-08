@@ -119,6 +119,7 @@
 		// Originally plantpots updated constantly but this was found to be rather expensive, so
 		// now it only does that if it needs to.
 	var/actionpassed 	//holds defines for action bar harvesting yay :D
+	var/datum/light/light //stupid temporary solution
 	New()
 		..()
 		src.plantgenes = new /datum/plantgenes(src)
