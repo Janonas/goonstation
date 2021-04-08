@@ -1203,7 +1203,7 @@
 	plant_reagent = "sulfonal"
 	
 /obj/item/reagent_containers/food/snacks/plant/belladonnaberry/good
-	name = "belladonna berry"
+	name = "pink belladonna berry"
 	desc = "This is definitely not a blueberry, the pink color makes it obvious."
 	icon_state = "good-belladonna-berry"
 	amount = 1
