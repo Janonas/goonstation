@@ -450,7 +450,7 @@
 /obj/item/plant/flower/uvsunflower
 	name = "UV sunflower"
 	desc = "This nice flower resembles the sun, it even glows!"
-	icon_state = "UVsunflower"
+	icon_state = "uvsunflower"
 	var/datum/light/light
 	var/on = 1
 
