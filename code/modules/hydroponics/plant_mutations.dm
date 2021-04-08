@@ -245,12 +245,7 @@
 
 	HYPspecial_proc_M(var/obj/machinery/plantpot/POT)
 		..()
-		if (.) return
-		if(!POT.dead)
-			light.enable()
-		else
-			light.disable()
-		
+		if (.) return	
 		var/datum/plantgenes/DNAO = POT.plantgenes
 		if(!POT.dead)
 			for (var/obj/machinery/plantpot/P in view(2,src))
