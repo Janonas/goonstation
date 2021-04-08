@@ -243,6 +243,33 @@
 	crop = /obj/item/plant/flower/uvsunflower
 	PTrange = list(75,null)
 	chance = 20
+	var/datum/light/light
+
+	New()
+		..()
+		light = new /datum/light/point
+		light.attach(src)
+		light.set_brightness(1)
+		light.set_height(1)
+		light.set_color(0.7, 0.2, 1)
+		if(src.active)
+			light.enable()
+		else
+			light.disable()
+
+
+	process()
+		..()
+		if(src.active)
+			for (var/obj/machinery/plantpot/P in view(2,src))
+				if(!P.current || P.dead)
+					continue
+				P.growth += (1 + (DNA.potency/30))
+				if(istype(P.plantgenes,/datum/plantgenes/))
+					var/datum/plantgenes/DNA = P.plantgenes
+					if(HYPCheckCommut(DNA,/datum/plant_gene_strain/photosynthesis))
+						P.growth += (3 + (DNA.potency/20))
+
 
 /datum/plantmutation/sunflower/stun
 	name = "Stunflower"
