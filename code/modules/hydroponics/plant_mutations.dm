@@ -246,23 +246,29 @@
 	special_proc_override = 1
 	var/datum/light/light
 	var/obj/machinery/plantpot/POT
+	// Pure pain
 	var/RL_Attached
+	var/x
+	var/y
+	var/z
+	var/dir
 
-	New()
+	New(var/obj/machinery/plantpot/POT)
 		..()
 		light = new /datum/light/point
 		light.attach(src)
 		light.set_brightness(1)
 		light.set_height(1)
 		light.set_color(0.7, 0.2, 1)
-		if(!POT.dead)
-			light.enable()
-		else
-			light.disable()
 
 	HYPspecial_proc_M(var/obj/machinery/plantpot/POT)
 		..()
 		if (.) return
+		if(!POT.dead)
+			light.enable()
+		else
+			light.disable()
+		
 		var/datum/plantgenes/DNAO = POT.plantgenes
 		if(!POT.dead)
 			for (var/obj/machinery/plantpot/P in view(2,src))
