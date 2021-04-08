@@ -1399,12 +1399,12 @@
 		
 		// this is stupid but i havent found a better way to do this yet.
 		if()src.current = datum/plant/sunflower/uv) && !src.dead)
-		light = new /datum/light/point
-		light.attach(src)
-		light.set_brightness(1)
-		light.set_height(1)
-		light.set_color(0.7, 0.2, 1)
-		light.enable()
+			light = new /datum/light/point
+			light.attach(src)
+			light.set_brightness(1)
+			light.set_height(1)
+			light.set_color(0.7, 0.2, 1)
+			light.enable()
 
 		if(usr && ishellbanned(usr)) //Haw haw
 			growth_rate = 1
