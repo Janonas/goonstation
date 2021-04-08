@@ -1403,7 +1403,7 @@
 			growth_rate = 2
 			
 		// this is stupid but i havent found a better way to do this yet.
-		if()src.current = datum/plant/sunflower/uv) && !src.dead)
+		if(src.current = datum/plant/sunflower/uv && !src.dead)
 			light = new /datum/light/point
 			light.attach(src)
 			light.set_brightness(1)
