@@ -476,9 +476,9 @@
 	name = "stunflower"
 	desc = "Is- is this an organic stun baton?"
 	icon_state = "stunflower"
+	inhand_image_icon = 'icons/mob/inhand/hand_weapons.dmi'
+	item_state = "stunflower"
 	attack_hand(var/mob/user as mob)                   
-	HasEntered(AM as mob|obj)
-		var/mob/M = AM
 		if (prob(10))
 			M.changeStatus("weakened",5)
 			M:stamina -= 10
