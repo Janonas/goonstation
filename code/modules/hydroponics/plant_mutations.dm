@@ -252,7 +252,7 @@
 		light.set_brightness(1)
 		light.set_height(1)
 		light.set_color(0.7, 0.2, 1)
-		if(src.active)
+		if(!POT.dead)
 			light.enable()
 		else
 			light.disable()
@@ -260,7 +260,7 @@
 
 	process()
 		..()
-		if(src.active)
+		if(!POT.dead)
 			for (var/obj/machinery/plantpot/P in view(2,src))
 				if(!P.current || P.dead)
 					continue
