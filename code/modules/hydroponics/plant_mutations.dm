@@ -245,11 +245,12 @@
 	chance = 20
 	special_proc_override = 1
 	var/datum/light/light
+	var/obj/machinery/plantpot/POT
+	var/datum/plant/PO = POT.current
+	var/datum/plantgenes/DNAO = POT.plantgenes
 
 	New()
 		..()
-		var/datum/plant/PO = POT.current
-		var/datum/plantgenes/DNA = POT.plantgenes
 		light = new /datum/light/point
 		light.attach(src)
 		light.set_brightness(1)
@@ -263,17 +264,15 @@
 	HYPspecial_proc_M(var/obj/machinery/plantpot/POT)
 		..()
 		if (.) return
-		var/datum/plant/PO = POT.current
-		var/datum/plantgenes/DNA = POT.plantgenes
 		if(!PO.dead)
 			for (var/obj/machinery/plantpot/P in view(2,src))
 				if(!P.current || P.dead)
 					continue
-				P.growth += (1 + (DNA.potency/30))
+				P.growth += (1 + (DNAO.potency/30))
 				if(istype(P.plantgenes,/datum/plantgenes/))
 					var/datum/plantgenes/DNA = P.plantgenes
 					if(HYPCheckCommut(DNA,/datum/plant_gene_strain/photosynthesis))
-						P.growth += (3 + (DNA.potency/20))
+						P.growth += (3 + (DNAO.potency/20))
 
 
 /datum/plantmutation/sunflower/stun
