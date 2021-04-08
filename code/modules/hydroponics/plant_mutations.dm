@@ -244,17 +244,12 @@
 	PTrange = list(75,null)
 	chance = 20
 	special_proc_override = 1
-	
-	HYPspecial_proc_M(var/obj/machinery/plantpot/POT)
-		..()
-		if (.) return
-		var/datum/plant/PO = POT.current
-		var/datum/plantgenes/DNA = PO.plantgenes
-
 	var/datum/light/light
 
 	New()
 		..()
+		var/datum/plant/PO = POT.current
+		var/datum/plantgenes/DNA = POT.plantgenes
 		light = new /datum/light/point
 		light.attach(src)
 		light.set_brightness(1)
@@ -265,7 +260,11 @@
 		else
 			light.disable()
 
-
+	HYPspecial_proc_M(var/obj/machinery/plantpot/POT)
+		..()
+		if (.) return
+		var/datum/plant/PO = POT.current
+		var/datum/plantgenes/DNA = POT.plantgenes
 		if(!PO.dead)
 			for (var/obj/machinery/plantpot/P in view(2,src))
 				if(!P.current || P.dead)
