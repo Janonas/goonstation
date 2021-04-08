@@ -241,31 +241,27 @@
 	PTrange = list(75,null)
 	chance = 20
 	special_proc_override = 1
-	var/datum/light/light
 	var/obj/machinery/plantpot/POT
-	// Pure pain
-	var/RL_Attached
-	var/x
-	var/y
-	var/z
-	var/dir
+	var/col_r = 0.7
+	var/col_g = 0.2
+	var/col_b = 1
+	var/brightness = 1
+	var/height = 1
+	var/light_type = null
+	var/datum/component/holdertargeting/simple_light/light_c
 
 	New()
 		..()
-		light = new /datum/light/point
-		light.attach(src)
-		light.set_brightness(1)
-		light.set_height(1)
-		light.set_color(0.7, 0.2, 1)
-		light.enable()
+		light_c = src.AddComponent(/datum/component/holdertargeting/simple_light, col_r*255, col_g*255, col_b*255, 255 * brightness)
+		light_c.update(1)
 
 	HYPspecial_proc_M(var/obj/machinery/plantpot/POT)
 		..()
 		if (.) return
 		if(!POT.dead)
-			light.enable()
+			light_c.update(1)
 		else
-			light.disable()
+			light_c.update(0)
 		
 		var/datum/plantgenes/DNAO = POT.plantgenes
 		if(!POT.dead)
