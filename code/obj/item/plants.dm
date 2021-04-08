@@ -451,26 +451,18 @@
 	name = "UV sunflower"
 	desc = "This nice flower resembles the sun, it even glows!"
 	icon_state = "uvsunflower"
-	var/datum/light/light
-	var/on = 1
+	col_r = 0.7
+	col_g = 0.2
+	col_b = 1
+	brightness = 0.3
+	height = 0.75
+	light_type = null
+	var/datum/component/holdertargeting/simple_light/light_c
 
 	New()
 		..()
-		light = new /datum/light/point
-		light.set_brightness(1)
-		light.set_height(1)
-		light.set_color(0.7, 0.2, 1)
-		light.attach(src)
-
-	pickup(mob/user)
-		..()
-		light.attach(user)
-
-	dropped(mob/user)
-		..()
-		SPAWN_DBG(0)
-			if (src.loc != user)
-				light.attach(src)
+		light_c = src.AddComponent(/datum/component/holdertargeting/simple_light, col_r*255, col_g*255, col_b*255, 255 * brightness)
+		light_c.update(1)
 	
 /obj/item/plant/flower/stunflower
 	name = "stunflower"
