@@ -250,9 +250,9 @@
 	var/light_type = null
 	var/datum/component/holdertargeting/simple_light/light_c
 
-	New()
+	New(var/obj/machinery/plantpot/POT)
 		..()
-		light_c = src.AddComponent(/datum/component/holdertargeting/simple_light, col_r*255, col_g*255, col_b*255, 255 * brightness)
+		light_c = POT.AddComponent(/datum/component/holdertargeting/simple_light, col_r*255, col_g*255, col_b*255, 255 * brightness)
 		light_c.update(1)
 
 	HYPspecial_proc_M(var/obj/machinery/plantpot/POT)
