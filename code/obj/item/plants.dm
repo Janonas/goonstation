@@ -478,19 +478,17 @@
 	icon_state = "stunflower"
 	inhand_image_icon = 'icons/mob/inhand/hand_weapons.dmi'
 	item_state = "stunflower"
-	attack_hand(var/mob/user as mob)                   
+	attack(mob/M as mob, mob/user as mob)
 		if (prob(10))
+			user.changeStatus("weakened",5)
+			user:stamina -= 10
+			user.visible_message("<span class='alert'>[user] accidentally zaps himself with the [src]!</span>")
+			return
+		else
+			user.visible_message("[user] attacks [M] with the [src]!")
 			M.changeStatus("weakened",5)
 			M:stamina -= 10
-			M.visible_message("<span class='alert'>[M] accidentally zaps himself with the [src]!</span>")
 			return
-		..()
-	attack(mob/M as mob, mob/user as mob)
-		M.take_toxin_damage(rand(5,10))
-		user.visible_message("[user] attacks [M] with the [src]!")
-		M.changeStatus("weakened",5)
-		M:stamina -= 10
-		return
 		..()
 		return
 	
