@@ -246,6 +246,7 @@
 	special_proc_override = 1
 	var/datum/light/light
 	var/obj/machinery/plantpot/POT
+	var/RL_Attached
 
 	New()
 		..()
@@ -254,7 +255,7 @@
 		light.set_brightness(1)
 		light.set_height(1)
 		light.set_color(0.7, 0.2, 1)
-		if(!src.dead)
+		if(!POT.dead)
 			light.enable()
 		else
 			light.disable()
