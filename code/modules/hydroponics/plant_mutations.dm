@@ -242,7 +242,7 @@
 	chance = 20
 	special_proc_override = 1
 	var/obj/machinery/plantpot/POT
-	var/datum/component/holdertargeting/simple_light/light_c
+	var/datum/light/light
 
 	New()
 		..()
