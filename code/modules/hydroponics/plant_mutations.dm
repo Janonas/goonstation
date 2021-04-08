@@ -247,15 +247,14 @@
 	var/datum/light/light
 	var/obj/machinery/plantpot/POT
 
-	New(var/obj/machinery/plantpot/POT)
+	New()
 		..()
-		var/obj/machinery/plantpot/POT
 		light = new /datum/light/point
-		light.attach(POT)
+		light.attach(src)
 		light.set_brightness(1)
 		light.set_height(1)
 		light.set_color(0.7, 0.2, 1)
-		if(!POT.dead)
+		if(!src.dead)
 			light.enable()
 		else
 			light.disable()
