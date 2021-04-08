@@ -1397,6 +1397,7 @@
 		update_icon()
 		update_name()
 		
+		// this is stupid but i havent found a better way to do this yet.
 		if()src.current = datum/plant/sunflower/uv) && !src.dead)
 		light = new /datum/light/point
 		light.attach(src)
