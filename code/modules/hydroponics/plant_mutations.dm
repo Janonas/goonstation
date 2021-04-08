@@ -243,6 +243,14 @@
 	crop = /obj/item/plant/flower/uvsunflower
 	PTrange = list(75,null)
 	chance = 20
+	special_proc_override = 1
+	
+	HYPspecial_proc_M(var/obj/machinery/plantpot/POT)
+		..()
+		if (.) return
+		var/datum/plant/P = POT.current
+		var/datum/plantgenes/DNA = POT.plantgenes
+
 	var/datum/light/light
 
 	New()
@@ -279,6 +287,18 @@
 	PTrange = list(50,null)
 	ENrange = list(25,null)
 	chance = 10
+	special_proc_override = 1
+	
+	HYPspecial_proc_M(var/obj/machinery/plantpot/POT)
+		..()
+		if (.) return
+		var/datum/plant/P = POT.current
+		var/datum/plantgenes/DNA = POT.plantgenes
+
+		var/fart_prob = max(0,min(100,DNA.potency))
+
+		if (POT.growth > (P.growtime - DNA.growtime) && prob(10))
+			elecflash(src.loc, 0, power = 0, exclude_center = 0)
 
 /datum/plantmutation/sunflower/moon
 	name = "Moonflower"
