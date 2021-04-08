@@ -217,7 +217,6 @@
 
 /datum/plantmutation/nightshade/sleepy
 	name = "Goodnight-shade"
-	dont_rename_crop = true
 	iconmod = "SNightshade"
 	crop = /obj/item/reagent_containers/food/snacks/plant/belladonnaberry/sleepy
 	PTrange = list(50,null)
@@ -227,7 +226,6 @@
 	
 /datum/plantmutation/nightshade/good
 	name = "Good Nightshade"
-	dont_rename_crop = true
 	iconmod = "GNightshade"
 	crop = /obj/item/reagent_containers/food/snacks/plant/belladonnaberry/good
 	ENrange = list(25,null)
@@ -238,7 +236,6 @@
 
 /datum/plantmutation/sunflower/uv
 	name = "UV Sunflower"
-	dont_rename_crop = true
 	iconmod = "UVSunflower"
 	crop = /obj/item/plant/flower/uvsunflower
 	PTrange = list(75,null)
@@ -284,7 +281,6 @@
 
 /datum/plantmutation/sunflower/stun
 	name = "Stunflower"
-	dont_rename_crop = true
 	iconmod = "Stunflower"
 	crop = /obj/item/plant/flower/stunflower
 	PTrange = list(50,null)
@@ -303,7 +299,6 @@
 
 /datum/plantmutation/sunflower/moon
 	name = "Moonflower"
-	dont_rename_crop = true
 	iconmod = "Moonflower"
 	crop = /obj/item/plant/flower/moonflower
 	chance = 10
