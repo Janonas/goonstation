@@ -242,26 +242,24 @@
 	chance = 20
 	special_proc_override = 1
 	var/obj/machinery/plantpot/POT
-	var/col_r = 0.7
-	var/col_g = 0.2
-	var/col_b = 1
-	var/brightness = 1
-	var/height = 1
-	var/light_type = null
 	var/datum/component/holdertargeting/simple_light/light_c
 
-	New(var/obj/machinery/plantpot/POT)
+	New()
 		..()
-		light_c = POT.AddComponent(/datum/component/holdertargeting/simple_light, col_r*255, col_g*255, col_b*255, 255 * brightness)
-		light_c.update(1)
+		light = new /datum/light/point
+		light.attach(src)
+		light.set_brightness(1)
+		light.set_height(1)
+		light.set_color(0.7, 0.2, 1)
+		light.enable()
 
 	HYPspecial_proc_M(var/obj/machinery/plantpot/POT)
 		..()
 		if (.) return
 		if(!POT.dead)
-			light_c.update(1)
+			light.enable()
 		else
-			light_c.update(0)
+			light.disable()
 		
 		var/datum/plantgenes/DNAO = POT.plantgenes
 		if(!POT.dead)
