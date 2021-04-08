@@ -246,10 +246,10 @@
 	special_proc_override = 1
 	var/datum/light/light
 	var/obj/machinery/plantpot/POT
-	var/obj/machinery/plantpot/POT.dead
 
 	New(var/obj/machinery/plantpot/POT)
 		..()
+		var/obj/machinery/plantpot/POT
 		light = new /datum/light/point
 		light.attach(POT)
 		light.set_brightness(1)
