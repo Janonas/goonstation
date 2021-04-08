@@ -248,8 +248,8 @@
 	HYPspecial_proc_M(var/obj/machinery/plantpot/POT)
 		..()
 		if (.) return
-		var/datum/plant/P = POT.current
-		var/datum/plantgenes/DNA = POT.plantgenes
+		var/datum/plant/PO = POT.current
+		var/datum/plantgenes/DNA = PO.plantgenes
 
 	var/datum/light/light
 
@@ -260,15 +260,13 @@
 		light.set_brightness(1)
 		light.set_height(1)
 		light.set_color(0.7, 0.2, 1)
-		if(!POT.dead)
+		if(!PO.dead)
 			light.enable()
 		else
 			light.disable()
 
 
-	process()
-		..()
-		if(!POT.dead)
+		if(!PO.dead)
 			for (var/obj/machinery/plantpot/P in view(2,src))
 				if(!P.current || P.dead)
 					continue
@@ -295,10 +293,8 @@
 		var/datum/plant/P = POT.current
 		var/datum/plantgenes/DNA = POT.plantgenes
 
-		var/fart_prob = max(0,min(100,DNA.potency))
-
 		if (POT.growth > (P.growtime - DNA.growtime) && prob(10))
-			elecflash(src.loc, 0, power = 0, exclude_center = 0)
+			elecflash(POT.loc, 0, power = 0, exclude_center = 0)
 
 /datum/plantmutation/sunflower/moon
 	name = "Moonflower"
