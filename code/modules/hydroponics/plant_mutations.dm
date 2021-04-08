@@ -246,11 +246,10 @@
 	special_proc_override = 1
 	var/datum/light/light
 	var/obj/machinery/plantpot/POT
-	var/datum/plant/PO = POT.current
-	var/datum/plantgenes/DNAO = POT.plantgenes
 
-	New()
+	New(var/obj/machinery/plantpot/POT)
 		..()
+		var/datum/plant/PO = POT.current
 		light = new /datum/light/point
 		light.attach(src)
 		light.set_brightness(1)
@@ -264,6 +263,8 @@
 	HYPspecial_proc_M(var/obj/machinery/plantpot/POT)
 		..()
 		if (.) return
+		var/datum/plant/PO = POT.current
+		var/datum/plantgenes/DNAO = POT.plantgenes
 		if(!PO.dead)
 			for (var/obj/machinery/plantpot/P in view(2,src))
 				if(!P.current || P.dead)
