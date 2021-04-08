@@ -451,12 +451,12 @@
 	name = "UV sunflower"
 	desc = "This nice flower resembles the sun, it even glows!"
 	icon_state = "uvsunflower"
-	col_r = 0.7
-	col_g = 0.2
-	col_b = 1
-	brightness = 0.3
-	height = 0.75
-	light_type = null
+	var/col_r = 0.7
+	var/col_g = 0.2
+	var/col_b = 1
+	var/brightness = 0.3
+	var/height = 0.75
+	var/light_type = null
 	var/datum/component/holdertargeting/simple_light/light_c
 
 	New()
