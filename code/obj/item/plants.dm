@@ -472,14 +472,14 @@
 	item_state = "stunflower"
 	attack(mob/M as mob, mob/user as mob)
 		if (prob(10))
-			user.changeStatus("weakened",5)
-			user:stamina -= 10
+			user.changeStatus("weakened",10)
+			user:stamina -= 20
 			user.visible_message("<span class='alert'>[user] accidentally zaps himself with the [src]!</span>")
 			return
 		else
 			user.visible_message("[user] attacks [M] with the [src]!")
-			M.changeStatus("weakened",5)
-			M:stamina -= 10
+			M.changeStatus("weakened",10)
+			M:stamina -= 20
 			return
 		..()
 		return
