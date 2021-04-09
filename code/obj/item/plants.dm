@@ -481,6 +481,8 @@
 			M.changeStatus("weakened",10)
 			M:stamina -= 20
 			return
+			
+		playsound(get_turf(src), "sound/impact_sounds/Energy_Hit_3.ogg", 50, 1, -1)
 		..()
 		return
 	
