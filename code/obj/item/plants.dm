@@ -466,7 +466,7 @@
 	
 /obj/item/plant/flower/stunflower
 	name = "stunflower"
-	desc = "Is- is this an organic stun baton?"
+	desc = "While this plant looks like a stun baton, its nowhere near as powerful and the twin heads make it easy to accidentaly hit yourself."
 	icon_state = "stunflower"
 	inhand_image_icon = 'icons/mob/inhand/hand_weapons.dmi'
 	item_state = "stunflower"
@@ -475,14 +475,14 @@
 			user.changeStatus("weakened",10)
 			user:stamina -= 25
 			user.visible_message("<span class='alert'>[user] accidentally zaps himself with the [src]!</span>")
+			playsound(get_turf(src), "goonstation/sound/effects/sparks2.ogg ", 50, 1, -1)
 			return
 		else
 			user.visible_message("[user] attacks [M] with the [src]!")
 			M.changeStatus("weakened",10)
 			M:stamina -= 25
+			playsound(get_turf(src), "goonstation/sound/effects/sparks2.ogg ", 50, 1, -1)
 			return
-			
-		playsound(get_turf(src), "goonstation/sound/effects/sparks2.ogg ", 50, 1, -1)
 		..()
 		return
 	
