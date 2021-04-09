@@ -1404,18 +1404,18 @@
 		src.recently_harvested = 0
 		update_icon()
 		update_name()
+		
+		// Hopefully this works.
+		light.set_brightness(growing.glow_brightness)
+		light.set_height(growing.glow_height)
+		light.set_color(growing.glow_r, growing.glow_g, growing.glow_b)
+		light.enable()
 
 		if(usr && ishellbanned(usr)) //Haw haw
 			growth_rate = 1
 		else
 			growth_rate = 2
 			
-		// Hopefully this works.
-		if(growing.glow == 1)
-			light.set_brightness(growing.glow_brightness)
-			light.set_height(growing.glow_height)
-			light.set_color(growing.glow_r, growing.glow_g, growing.glow_b)
-			light.enable()
 
 	proc/HYPkillplant()
 		// Simple proc to kill the plant without clearing the plantpot out altogether.
