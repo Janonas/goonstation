@@ -482,8 +482,7 @@
 			M:stamina -= 25
 			return
 			
-		playsound(get_turf(src), "sound/impact_sounds/Slimy_Hit_1.ogg", 50, 1, -1)
-		playsound(get_turf(src), "sound/impact_sounds/Energy_Hit_3.ogg", 50, 1, -1)
+		playsound(get_turf(src), "goonstation/sound/effects/sparks2.ogg ", 50, 1, -1)
 		..()
 		return
 	
