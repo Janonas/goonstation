@@ -56,13 +56,7 @@ ABSTRACT_TYPE(/datum/plant)
 
 	var/lasterr = 0
 	
-	// Glowing plants!
-	var/glow = 0	// If the plant should glow
-	var/glow_r = 0	// Redness of the glow
-	var/glow_g = 0	// Greenness of the glow
-	var/glow_b = 0	// Blueness of the glow
-	var/glow_brightness = 0	// Brightness of the glow
-	var/glow_height = 0	// Height of the glow
+	var/uvglow = 0	// If the plant should glow like the UV Growth lamp
 
 	// fixed some runtime errors here - singh
 	// hyp procs now return 0 for success and continue, any other number for error codes
