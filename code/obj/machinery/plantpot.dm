@@ -830,7 +830,7 @@
 			UpdateOverlays(null, "harvest_display")
 			UpdateOverlays(null, "health_display")
 			if(growing.glow == 1)
-				RemoveComponent(light_c)
+				src.disposing(light_c)
 				
 		else
 			UpdateOverlays(null, "plantdeath")
@@ -1427,7 +1427,7 @@
 		update_icon()
 		update_name()
 		if(growing.glow == 1)
-			RemoveComponent(light_c)
+			src.disposing(light_c)
 
 	proc/HYPdestroyplant()
 		// This resets the plantpot back to it's base state, apart from reagents.
@@ -1444,7 +1444,7 @@
 		src.contributors = list()
 		var/datum/plantgenes/DNA = src.plantgenes
 		if(growing.glow == 1)
-			RemoveComponent(light_c)
+			src.disposing(light_c)
 
 		DNA.growtime = 0
 		DNA.harvtime = 0
