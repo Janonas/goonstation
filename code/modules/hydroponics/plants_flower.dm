@@ -57,7 +57,7 @@ ABSTRACT_TYPE(/datum/plant/flower)
 	mutations = list()
 	assoc_reagents = list("miasma")
 	
-	HYPspecial_proc_M(var/obj/machinery/plantpot/POT)
+	HYPspecial_proc(var/obj/machinery/plantpot/POT)
 		..()
 		if (.) return
 		var/datum/plant/P = POT.current
@@ -65,8 +65,8 @@ ABSTRACT_TYPE(/datum/plant/flower)
 		var/spray_prob = max(0,(10 + DNA.endurance / 10))
 	
 		if (POT.growth > (P.growtime - DNA.growtime) && prob(spray_prob))
-			for(REAG in assoc_reagents)
-			POT.reagents.add_reagent(REAG, max(1,(1 + DNA.potency / 5)))
+			for(var/REAG in assoc_reagents)
+				POT.reagents.add_reagent(REAG, max(1,(1 + DNA.potency / 5)))
 		POT.reagents.add_reagent("pottasium", max(1,(1 + DNA.potency / 10)))
 		POT.reagents.add_reagent("sugar", max(1,(1 + DNA.potency / 10)))
 		POT.reagents.add_reagent("phosphorus", max(1,(1 + DNA.potency / 10)))
