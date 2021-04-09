@@ -291,7 +291,7 @@
 		var/datum/plantgenes/DNA = POT.plantgenes
 
 		if (POT.growth > (P.growtime - DNA.growtime) && prob(10))
-			playsound(get_turf(src), "goonstation/sound/effects/electric_shock_short.ogg", 50, 1, -1)
+			playsound(POT.loc, "goonstation/sound/effects/electric_shock_short.ogg", 50, 1, -1)
 
 /datum/plantmutation/sunflower/moon
 	name = "Moonflower"
