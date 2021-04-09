@@ -826,7 +826,8 @@
 			UpdateOverlays(hydro_controls.pot_death_display, "plantdeath")
 			UpdateOverlays(null, "harvest_display")
 			UpdateOverlays(null, "health_display")
-			light.disposing()
+			if(growing.glow == 1)
+				light.disposing()
 		else
 			UpdateOverlays(null, "plantdeath")
 			if(src.harvest_warning)
@@ -1425,7 +1426,8 @@
 		src.harvest_warning = 0
 		update_icon()
 		update_name()
-		light.disposing()
+		if(growing.glow == 1)
+			light.disposing()
 
 	proc/HYPdestroyplant()
 		// This resets the plantpot back to it's base state, apart from reagents.
@@ -1452,7 +1454,8 @@
 
 		src.generation = 0
 		update_icon()
-		light.disposing()
+		if(growing.glow == 1)
+			light.disposing()
 		post_alert("event_cleared")
 
 	proc/HYPdamageplant(var/damage_source, var/damage_amount, var/bypass_resistance = 0)
