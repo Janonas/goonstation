@@ -62,7 +62,7 @@ ABSTRACT_TYPE(/datum/plant/flower)
 		if (.) return
 		var/datum/plant/P = POT.current
 		var/datum/plantgenes/DNA = POT.plantgenes	
-		var/spray_prob = max(0,(10 + DNA.endurance / 10))
+		var/spray_prob = max(30,(30 + DNA.endurance / 10))
 	
 		if (POT.growth > (P.growtime - DNA.growtime) && prob(spray_prob))
 			for(var/REAG in assoc_reagents)
