@@ -60,9 +60,9 @@ ABSTRACT_TYPE(/datum/plant/flower)
 	HYPspecial_proc_M(var/obj/machinery/plantpot/POT)
 		..()
 		if (.) return
-		var/datum/plantgenes/DNA = POT.plantgenes
-
+		var/datum/plant/P = POT.current
+		var/datum/plantgenes/DNA = POT.plantgenes	
 		var/spray_prob = max(0,(10 + DNA.endurance / 10))
-
-		if (prob(spray_prob))
+	
+		if (POT.growth > (P.growtime - DNA.growtime) && prob(spray_prob))
 			playsound(POT.loc, "sound/effects/exlow.ogg", 30, 1)
