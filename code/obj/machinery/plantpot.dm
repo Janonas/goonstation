@@ -132,6 +132,8 @@
 		src.water_meter = image('icons/obj/hydroponics/machines_hydroponics.dmi', "wat-[src.water_level]")
 		src.plant_sprite = image('icons/obj/hydroponics/plants_weed.dmi', "")
 		update_icon()
+		light = new /datum/light/point
+		light.attach(src)
 
 		SPAWN_DBG(0.5 SECONDS)
 			radio_controller?.add_object(src, "[report_freq]")
@@ -826,8 +828,7 @@
 			UpdateOverlays(hydro_controls.pot_death_display, "plantdeath")
 			UpdateOverlays(null, "harvest_display")
 			UpdateOverlays(null, "health_display")
-			if(growing.glow == 1)
-				light.disposing()
+			light.disable
 		else
 			UpdateOverlays(null, "plantdeath")
 			if(src.harvest_warning)
@@ -1407,8 +1408,6 @@
 			
 		// Hopefully this works.
 		if(growing.glow == 1)
-			light = new /datum/light/point
-			light.attach(src)
 			light.set_brightness(growing.glow_brightness)
 			light.set_height(growing.glow_height)
 			light.set_color(growing.glow_r, growing.glow_g, growing.glow_b)
@@ -1416,7 +1415,6 @@
 
 	proc/HYPkillplant()
 		// Simple proc to kill the plant without clearing the plantpot out altogether.
-		var/datum/plant/growing = src.current
 		src.health = 0
 		src.harvests = 0
 		src.dead = 1
@@ -1427,8 +1425,7 @@
 		src.harvest_warning = 0
 		update_icon()
 		update_name()
-		if(growing.glow == 1)
-			light.disposing()
+		light.disable
 
 	proc/HYPdestroyplant()
 		// This resets the plantpot back to it's base state, apart from reagents.
@@ -1456,8 +1453,7 @@
 
 		src.generation = 0
 		update_icon()
-		if(growing.glow == 1)
-			light.disposing()
+		light.disable
 		post_alert("event_cleared")
 
 	proc/HYPdamageplant(var/damage_source, var/damage_amount, var/bypass_resistance = 0)
