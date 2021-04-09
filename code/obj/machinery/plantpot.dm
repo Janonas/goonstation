@@ -119,6 +119,10 @@
 		// Originally plantpots updated constantly but this was found to be rather expensive, so
 		// now it only does that if it needs to.
 	var/actionpassed 	//holds defines for action bar harvesting yay :D
+	//light stuff
+	var/height = 1
+	var/light_type = null
+	var/datum/component/holdertargeting/simple_light/light_c
 	New()
 		..()
 		src.plantgenes = new /datum/plantgenes(src)
@@ -825,6 +829,9 @@
 			UpdateOverlays(hydro_controls.pot_death_display, "plantdeath")
 			UpdateOverlays(null, "harvest_display")
 			UpdateOverlays(null, "health_display")
+			if(growing.glow == 1)
+				RemoveComponent(light_c)
+				
 		else
 			UpdateOverlays(null, "plantdeath")
 			if(src.harvest_warning)
@@ -1401,9 +1408,14 @@
 			growth_rate = 1
 		else
 			growth_rate = 2
+			
+		if(growing.glow == 1)
+			light_c = src.AddComponent(/datum/component/holdertargeting/simple_light, growing.glow_r*255, growing.glow_g*255, growing.glow_b*255, 255 * growing.glow_brightness)
+			light_c.update(1)
 
 	proc/HYPkillplant()
 		// Simple proc to kill the plant without clearing the plantpot out altogether.
+		var/datum/plant/growing = src.current
 		src.health = 0
 		src.harvests = 0
 		src.dead = 1
@@ -1414,9 +1426,12 @@
 		src.harvest_warning = 0
 		update_icon()
 		update_name()
+		if(growing.glow == 1)
+			RemoveComponent(light_c)
 
 	proc/HYPdestroyplant()
 		// This resets the plantpot back to it's base state, apart from reagents.
+		var/datum/plant/growing = src.current
 		src.name = "hydroponics tray"
 		src.current = null
 		src.growth = 0
@@ -1428,6 +1443,8 @@
 		src.harvest_warning = 0
 		src.contributors = list()
 		var/datum/plantgenes/DNA = src.plantgenes
+		if(growing.glow == 1)
+			RemoveComponent(light_c)
 
 		DNA.growtime = 0
 		DNA.harvtime = 0
