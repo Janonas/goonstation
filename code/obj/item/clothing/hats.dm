@@ -1308,5 +1308,5 @@
 	name = "rafflesia"
 	desc = "Usually reffered to as corpseflower, due to its horrid smell."
 	wear_image_icon = 'icons/mob/fruithat.dmi'
-	icon_state = "rafflesia"
-	icon_state = "rafflesia"
+	icon_state = "rafflesiahat"
+	item_state = "rafflesia"
