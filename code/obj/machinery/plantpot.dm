@@ -829,8 +829,7 @@
 			UpdateOverlays(hydro_controls.pot_death_display, "plantdeath")
 			UpdateOverlays(null, "harvest_display")
 			UpdateOverlays(null, "health_display")
-			if(growing.glow == 1)
-				src.disposing(light_c)
+			src.disposing(light_c)
 				
 		else
 			UpdateOverlays(null, "plantdeath")
@@ -1409,9 +1408,8 @@
 		else
 			growth_rate = 2
 			
-		if(growing.glow == 1)
-			light_c = src.AddComponent(/datum/component/holdertargeting/simple_light, growing.glow_r*255, growing.glow_g*255, growing.glow_b*255, 255 * growing.glow_brightness)
-			light_c.update(1)
+		light_c = src.AddComponent(/datum/component/holdertargeting/simple_light, growing.glow_r*255, growing.glow_g*255, growing.glow_b*255, 255 * growing.glow_brightness)
+		light_c.update(1)
 
 	proc/HYPkillplant()
 		// Simple proc to kill the plant without clearing the plantpot out altogether.
@@ -1426,8 +1424,7 @@
 		src.harvest_warning = 0
 		update_icon()
 		update_name()
-		if(growing.glow == 1)
-			src.disposing(light_c)
+		src.disposing(light_c)
 
 	proc/HYPdestroyplant()
 		// This resets the plantpot back to it's base state, apart from reagents.
@@ -1443,8 +1440,7 @@
 		src.harvest_warning = 0
 		src.contributors = list()
 		var/datum/plantgenes/DNA = src.plantgenes
-		if(growing.glow == 1)
-			src.disposing(light_c)
+		src.disposing(light_c)
 
 		DNA.growtime = 0
 		DNA.harvtime = 0
