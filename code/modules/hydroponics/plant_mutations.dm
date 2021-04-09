@@ -245,6 +245,7 @@
 /datum/plantmutation/sunflower/uv
 	name = "UV Sunflower"
 	iconmod = "UVSunflower"
+	dont_rename_crop = true
 	crop = /obj/item/plant/flower/uvsunflower
 	PTrange = list(75,null)
 	chance = 20
@@ -276,6 +277,7 @@
 /datum/plantmutation/sunflower/stun
 	name = "Stunflower"
 	iconmod = "Stunflower"
+	dont_rename_crop = true
 	crop = /obj/item/plant/flower/stunflower
 	PTrange = list(50,null)
 	ENrange = list(25,null)
@@ -294,6 +296,7 @@
 /datum/plantmutation/sunflower/moon
 	name = "Moonflower"
 	iconmod = "Moonflower"
+	dont_rename_crop = true
 	crop = /obj/item/plant/flower/moonflower
 	chance = 10
 	assoc_reagents = list("sulfur")
