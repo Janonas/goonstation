@@ -119,6 +119,7 @@
 		// Originally plantpots updated constantly but this was found to be rather expensive, so
 		// now it only does that if it needs to.
 	var/actionpassed 	//holds defines for action bar harvesting yay :D
+	var/datum/light/light
 	New()
 		..()
 		src.plantgenes = new /datum/plantgenes(src)
@@ -131,6 +132,12 @@
 		src.water_meter = image('icons/obj/hydroponics/machines_hydroponics.dmi', "wat-[src.water_level]")
 		src.plant_sprite = image('icons/obj/hydroponics/plants_weed.dmi', "")
 		update_icon()
+		light = new /datum/light/point
+		light.attach(src)
+		light.set_brightness(1)
+		light.set_height(1)
+		light.set_color(0.7, 0.2, 1)
+		light.disable()
 
 		SPAWN_DBG(0.5 SECONDS)
 			radio_controller?.add_object(src, "[report_freq]")
@@ -1384,6 +1391,8 @@
 		if(SDNA.mutation)
 			DNA.mutation = HY_get_mutation_from_path(SDNA.mutation.type)
 		// Copy over all genes, strains and mutations from the seed.
+		
+		light.enable()
 
 		// Finally set the harvests, make sure we always have at least one harvest,
 		// then get rid of the seed, mutate the genes a little and update the pot sprite.
@@ -1414,6 +1423,7 @@
 		src.harvest_warning = 0
 		update_icon()
 		update_name()
+		light.disable()
 
 	proc/HYPdestroyplant()
 		// This resets the plantpot back to it's base state, apart from reagents.
@@ -1440,6 +1450,7 @@
 
 		src.generation = 0
 		update_icon()
+		light.disable()
 		post_alert("event_cleared")
 
 	proc/HYPdamageplant(var/damage_source, var/damage_amount, var/bypass_resistance = 0)
