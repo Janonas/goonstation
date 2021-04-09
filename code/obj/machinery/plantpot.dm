@@ -1416,6 +1416,7 @@
 
 	proc/HYPkillplant()
 		// Simple proc to kill the plant without clearing the plantpot out altogether.
+		var/datum/plant/growing = src.current
 		src.health = 0
 		src.harvests = 0
 		src.dead = 1
@@ -1431,6 +1432,7 @@
 
 	proc/HYPdestroyplant()
 		// This resets the plantpot back to it's base state, apart from reagents.
+		var/datum/plant/growing = src.current
 		src.name = "hydroponics tray"
 		src.current = null
 		src.growth = 0
