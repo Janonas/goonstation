@@ -283,6 +283,7 @@ ABSTRACT_TYPE(/datum/plant/fruit)
 	harvests = 2
 	endurance = 1
 	genome = 19
+	vending = 2
 	nectarlevel = 15
 	assoc_reagents = list("belladonnine")
 	mutations = list(/datum/plantmutation/nightshade/sleepy, /datum/plantmutation/nightshade/good)
