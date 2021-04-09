@@ -65,4 +65,5 @@ ABSTRACT_TYPE(/datum/plant/flower)
 		var/spray_prob = max(0,(10 + DNA.endurance / 10))
 	
 		if (POT.growth > (P.growtime - DNA.growtime) && prob(spray_prob))
-			playsound(POT.loc, "sound/effects/exlow.ogg", 30, 1)
+			for(REAG in assoc_reagents)
+			M.reagents.add_reagent("toxic_slurry", rand(5,20))
