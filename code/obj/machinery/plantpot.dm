@@ -120,6 +120,7 @@
 		// now it only does that if it needs to.
 	var/actionpassed 	//holds defines for action bar harvesting yay :D
 	var/datum/light/light // some plants will be able to glow now
+	light = new /datum/light/point
 	New()
 		..()
 		src.plantgenes = new /datum/plantgenes(src)
@@ -132,8 +133,10 @@
 		src.water_meter = image('icons/obj/hydroponics/machines_hydroponics.dmi', "wat-[src.water_level]")
 		src.plant_sprite = image('icons/obj/hydroponics/plants_weed.dmi', "")
 		update_icon()
-		light = new /datum/light/point
 		light.attach(src)
+		light.set_brightness(0)
+		light.set_height(0)
+		light.set_color(0, 0, 0)
 		light.disable
 
 		SPAWN_DBG(0.5 SECONDS)
