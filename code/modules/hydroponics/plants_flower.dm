@@ -42,7 +42,7 @@ ABSTRACT_TYPE(/datum/plant/flower)
 /datum/plant/flower/rafflesia
 	name = "Rafflesia"
 	seedcolor = "#A4000F"
-	crop = /obj/item/plant/flower/rafflesia
+	crop = /obj/item/clothing/head/rafflesia
 	starthealth = 40
 	growtime = 50
 	harvtime = 90
