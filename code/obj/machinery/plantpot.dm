@@ -119,7 +119,7 @@
 		// Originally plantpots updated constantly but this was found to be rather expensive, so
 		// now it only does that if it needs to.
 	var/actionpassed 	//holds defines for action bar harvesting yay :D
-	var/datum/light/light //stupid temporary solution
+	var/datum/light/light // some plants will be able to glow now
 	New()
 		..()
 		src.plantgenes = new /datum/plantgenes(src)
@@ -131,11 +131,6 @@
 		// to have too much water, which stunts plant growth speed.
 		src.water_meter = image('icons/obj/hydroponics/machines_hydroponics.dmi', "wat-[src.water_level]")
 		src.plant_sprite = image('icons/obj/hydroponics/plants_weed.dmi', "")
-		light = new /datum/light/point
-		light.attach(src)
-		light.set_brightness(1)
-		light.set_height(1)
-		light.set_color(0.7, 0.2, 1)
 		update_icon()
 
 		SPAWN_DBG(0.5 SECONDS)
@@ -1409,8 +1404,13 @@
 		else
 			growth_rate = 2
 			
-		// this is stupid but i havent found a better way to do this yet.
-		if(istype(src.current,/datum/plantmutation/sunflower/uv))
+		// Hopefully this works.
+		if(growing.glow == 1)
+			light = new /datum/light/point
+			light.attach(src)
+			light.set_brightness(growing.glow_brightness)
+			light.set_height(growing.glow_height)
+			light.set_color(growing.glow_r, growing.glow_g, growing.glow_b)
 			light.enable()
 
 	proc/HYPkillplant()
