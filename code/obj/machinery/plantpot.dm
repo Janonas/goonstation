@@ -134,6 +134,7 @@
 		update_icon()
 		light = new /datum/light/point
 		light.attach(src)
+		light.disable
 
 		SPAWN_DBG(0.5 SECONDS)
 			radio_controller?.add_object(src, "[report_freq]")
