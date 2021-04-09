@@ -35,7 +35,6 @@ ABSTRACT_TYPE(/datum/plant/flower)
 	nectarlevel = 4
 	genome = 8
 	force_seed_on_harvest = 1
-	uvglow = 1
 	special_proc = 1 // required for the special effects of the mutations.
 	mutations = list(/datum/plantmutation/sunflower/uv,/datum/plantmutation/sunflower/stun,/datum/plantmutation/sunflower/moon)
 	assoc_reagents = list("oil")
