@@ -473,15 +473,16 @@
 	attack(mob/M as mob, mob/user as mob)
 		if (prob(10))
 			user.changeStatus("weakened",10)
-			user:stamina -= 20
+			user:stamina -= 25
 			user.visible_message("<span class='alert'>[user] accidentally zaps himself with the [src]!</span>")
 			return
 		else
 			user.visible_message("[user] attacks [M] with the [src]!")
 			M.changeStatus("weakened",10)
-			M:stamina -= 20
+			M:stamina -= 25
 			return
 			
+		playsound(get_turf(src), "sound/impact_sounds/Slimy_Hit_1.ogg", 50, 1, -1)
 		playsound(get_turf(src), "sound/impact_sounds/Energy_Hit_3.ogg", 50, 1, -1)
 		..()
 		return
