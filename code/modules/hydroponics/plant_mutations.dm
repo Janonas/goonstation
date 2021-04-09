@@ -264,7 +264,7 @@
 	crop = /obj/item/plant/flower/stunflower
 	PTrange = list(50,null)
 	ENrange = list(25,null)
-	chance = 10
+	chance = 15
 	special_proc_override = 1
 	
 	HYPspecial_proc_M(var/obj/machinery/plantpot/POT)
