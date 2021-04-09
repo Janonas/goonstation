@@ -261,9 +261,6 @@
 					var/datum/plantgenes/DNA = P.plantgenes
 					if(HYPCheckCommut(DNA,/datum/plant_gene_strain/photosynthesis))
 						P.growth += (3 + (DNAO.potency/20))
-						
-			return
-
 
 /datum/plantmutation/sunflower/stun
 	name = "Stunflower"
@@ -283,8 +280,6 @@
 
 		if (POT.growth > (P.growtime - DNA.growtime) && prob(10))
 			playsound(POT.loc, "goonstation/sound/effects/sparks6.ogg", 50, 1, -1)
-		
-		return
 
 /datum/plantmutation/sunflower/moon
 	name = "Moonflower"
