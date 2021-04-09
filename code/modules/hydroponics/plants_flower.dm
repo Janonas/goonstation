@@ -66,4 +66,9 @@ ABSTRACT_TYPE(/datum/plant/flower)
 	
 		if (POT.growth > (P.growtime - DNA.growtime) && prob(spray_prob))
 			for(REAG in assoc_reagents)
-			M.reagents.add_reagent("toxic_slurry", rand(5,20))
+			POT.reagents.add_reagent(REAG, max(1,(1 + DNA.potency / 5)))
+		POT.reagents.add_reagent("pottasium", max(1,(1 + DNA.potency / 10)))
+		POT.reagents.add_reagent("sugar", max(1,(1 + DNA.potency / 10)))
+		POT.reagents.add_reagent("phosphorus", max(1,(1 + DNA.potency / 10)))
+		
+		return
