@@ -119,8 +119,6 @@
 		// Originally plantpots updated constantly but this was found to be rather expensive, so
 		// now it only does that if it needs to.
 	var/actionpassed 	//holds defines for action bar harvesting yay :D
-	var/datum/light/light // some plants will be able to glow now
-	light = new /datum/light/point
 	New()
 		..()
 		src.plantgenes = new /datum/plantgenes(src)
@@ -133,11 +131,6 @@
 		src.water_meter = image('icons/obj/hydroponics/machines_hydroponics.dmi', "wat-[src.water_level]")
 		src.plant_sprite = image('icons/obj/hydroponics/plants_weed.dmi', "")
 		update_icon()
-		light.attach(src)
-		light.set_brightness(0)
-		light.set_height(0)
-		light.set_color(0, 0, 0)
-		light.disable()
 
 		SPAWN_DBG(0.5 SECONDS)
 			radio_controller?.add_object(src, "[report_freq]")
@@ -832,7 +825,6 @@
 			UpdateOverlays(hydro_controls.pot_death_display, "plantdeath")
 			UpdateOverlays(null, "harvest_display")
 			UpdateOverlays(null, "health_display")
-			light.disable()
 		else
 			UpdateOverlays(null, "plantdeath")
 			if(src.harvest_warning)
@@ -1404,18 +1396,11 @@
 		src.recently_harvested = 0
 		update_icon()
 		update_name()
-		
-		// Hopefully this works.
-		light.set_brightness(growing.glow_brightness)
-		light.set_height(growing.glow_height)
-		light.set_color(growing.glow_r, growing.glow_g, growing.glow_b)
-		light.enable()
 
 		if(usr && ishellbanned(usr)) //Haw haw
 			growth_rate = 1
 		else
 			growth_rate = 2
-			
 
 	proc/HYPkillplant()
 		// Simple proc to kill the plant without clearing the plantpot out altogether.
@@ -1429,7 +1414,6 @@
 		src.harvest_warning = 0
 		update_icon()
 		update_name()
-		light.disable()
 
 	proc/HYPdestroyplant()
 		// This resets the plantpot back to it's base state, apart from reagents.
@@ -1456,7 +1440,6 @@
 
 		src.generation = 0
 		update_icon()
-		light.disable()
 		post_alert("event_cleared")
 
 	proc/HYPdamageplant(var/damage_source, var/damage_amount, var/bypass_resistance = 0)
