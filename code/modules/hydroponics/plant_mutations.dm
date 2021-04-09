@@ -12,6 +12,7 @@
 	var/attacked_proc_override = 0
 	var/name_prefix = ""	// Prepend to plant name
 	var/name_suffix = ""	// Append to plant name
+	var/dont_rename_crop = false	// don't rename the crop after the plant
 	
 	// Ranges various genes have to be in to get the mutation to appear - lower and upper bound
 	var/list/GTrange = list(null,null) // null means there is no limit so an upper bound of 25
@@ -25,6 +26,14 @@
 	var/list/assoc_reagents = list() // Used for extractions, harvesting, etc
 
 	var/lasterr = 0
+	
+	// Glowing Plants
+	var/glow = 0	// If the plant should glow
+	var/glow_r = 0	// Redness of the glow
+	var/glow_g = 0	// Greenness of the glow
+	var/glow_b = 0	// Blueness of the glow
+	var/glow_brightness = 0	// Brightness of the glow
+	var/glow_height = 0	// Height of the glow
 
 	proc/HYPharvested_proc_M(var/obj/machinery/plantpot/POT, var/mob/user)
 		lasterr = 0
