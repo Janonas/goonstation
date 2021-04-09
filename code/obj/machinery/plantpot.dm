@@ -137,7 +137,7 @@
 		light.set_brightness(0)
 		light.set_height(0)
 		light.set_color(0, 0, 0)
-		light.disable
+		light.disable()
 
 		SPAWN_DBG(0.5 SECONDS)
 			radio_controller?.add_object(src, "[report_freq]")
@@ -832,7 +832,7 @@
 			UpdateOverlays(hydro_controls.pot_death_display, "plantdeath")
 			UpdateOverlays(null, "harvest_display")
 			UpdateOverlays(null, "health_display")
-			light.disable
+			light.disable()
 		else
 			UpdateOverlays(null, "plantdeath")
 			if(src.harvest_warning)
@@ -1429,7 +1429,7 @@
 		src.harvest_warning = 0
 		update_icon()
 		update_name()
-		light.disable
+		light.disable()
 
 	proc/HYPdestroyplant()
 		// This resets the plantpot back to it's base state, apart from reagents.
@@ -1456,7 +1456,7 @@
 
 		src.generation = 0
 		update_icon()
-		light.disable
+		light.disable()
 		post_alert("event_cleared")
 
 	proc/HYPdamageplant(var/damage_source, var/damage_amount, var/bypass_resistance = 0)
