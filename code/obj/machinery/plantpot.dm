@@ -1430,7 +1430,6 @@
 
 	proc/HYPdestroyplant()
 		// This resets the plantpot back to it's base state, apart from reagents.
-		var/datum/plant/growing = src.current
 		src.name = "hydroponics tray"
 		src.current = null
 		src.growth = 0
