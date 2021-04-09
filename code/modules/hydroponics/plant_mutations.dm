@@ -267,7 +267,7 @@
 		if (.) return	
 		var/datum/plantgenes/DNAO = POT.plantgenes
 		if(!POT.dead)
-			light_c = POT.AddComponent(/datum/component/holdertargeting/simple_light, col_r*255, col_g*255, col_b*255, 255 * brightness)
+			light_c = POT.AddComponent(/datum/component/holdertargeting/simple_light, glow_r*255, glow_g*255, glow_b*255, 255 * glow_brightness)
 			light_c.update(1)
 			for (var/obj/machinery/plantpot/P in view(2,src))
 				if(!P.current || P.dead)
