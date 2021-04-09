@@ -141,6 +141,12 @@
 
 	disposing()
 		radio_controller.remove_object(src, "[report_freq]")
+		
+	light = new /datum/light/point
+			light.attach(src)
+			light.set_brightness(1)
+			light.set_height(1)
+			light.set_color(0.7, 0.2, 1)
 		..()
 
 	proc/post_alert(var/alert_msg)
@@ -826,6 +832,7 @@
 			UpdateOverlays(hydro_controls.pot_death_display, "plantdeath")
 			UpdateOverlays(null, "harvest_display")
 			UpdateOverlays(null, "health_display")
+			light.disable()
 		else
 			UpdateOverlays(null, "plantdeath")
 			if(src.harvest_warning)
@@ -1404,12 +1411,7 @@
 			growth_rate = 2
 			
 		// this is stupid but i havent found a better way to do this yet.
-		if(istype(src.current,/datum/plantmutation/sunflower/uv) && !src.dead)
-			light = new /datum/light/point
-			light.attach(src)
-			light.set_brightness(1)
-			light.set_height(1)
-			light.set_color(0.7, 0.2, 1)
+		if(istype(src.current,/datum/plantmutation/sunflower/uv))
 			light.enable()
 
 	proc/HYPkillplant()
@@ -1424,6 +1426,7 @@
 		src.harvest_warning = 0
 		update_icon()
 		update_name()
+		light.disable()
 
 	proc/HYPdestroyplant()
 		// This resets the plantpot back to it's base state, apart from reagents.
@@ -1450,6 +1453,7 @@
 
 		src.generation = 0
 		update_icon()
+		light.disable()
 		post_alert("event_cleared")
 
 	proc/HYPdamageplant(var/damage_source, var/damage_amount, var/bypass_resistance = 0)
