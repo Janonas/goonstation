@@ -50,6 +50,7 @@ ABSTRACT_TYPE(/datum/plant/flower)
 	harvests = 1
 	isgrass = 1
 	endurance = 0
+	vending = 2
 	genome = 8
 	force_seed_on_harvest = 1
 	special_proc = 1
