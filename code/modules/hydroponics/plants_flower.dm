@@ -30,7 +30,7 @@ ABSTRACT_TYPE(/datum/plant/flower)
 	harvtime = 100
 	cropsize = 1
 	harvests = 1
-	isgrass = 0
+	isgrass = 1
 	endurance = 0
 	nectarlevel = 4
 	genome = 8
