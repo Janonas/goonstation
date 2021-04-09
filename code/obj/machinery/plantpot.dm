@@ -1392,7 +1392,7 @@
 			DNA.mutation = HY_get_mutation_from_path(SDNA.mutation.type)
 		// Copy over all genes, strains and mutations from the seed.
 		
-		if(growing.uvglow = 1):
+		if(growing.uvglow == 1):
 			light.enable()
 
 		// Finally set the harvests, make sure we always have at least one harvest,
