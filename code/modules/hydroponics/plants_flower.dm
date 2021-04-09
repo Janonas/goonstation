@@ -56,3 +56,13 @@ ABSTRACT_TYPE(/datum/plant/flower)
 	special_proc = 1
 	mutations = list()
 	assoc_reagents = list("miasma")
+	
+	HYPspecial_proc_M(var/obj/machinery/plantpot/POT)
+		..()
+		if (.) return
+		var/datum/plantgenes/DNA = POT.plantgenes
+
+		var/spray_prob = max(0,(10 + DNA.endurance / 10))
+
+		if (prob(spray_prob))
+			playsound(POT.loc, "sound/effects/exlow.ogg", 30, 1)
