@@ -491,11 +491,6 @@
 	desc = "This nice flower resembles the moon, kinda."
 	icon_state = "moonflower"
 	
-/obj/item/plant/flower/rafflesia
-	name = "rafflesia"
-	desc = "Usually reffered to as corpseflower, due to its horrid smell."
-	icon_state = "rafflesia"
-
 /obj/item/plant/herb/hcordata
 	name = "houttuynia cordata"
 	desc = "Also known as fish mint or heart leaf, used in cuisine for its distinct fishy flavor."
