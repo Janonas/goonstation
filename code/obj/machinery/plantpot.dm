@@ -131,6 +131,11 @@
 		// to have too much water, which stunts plant growth speed.
 		src.water_meter = image('icons/obj/hydroponics/machines_hydroponics.dmi', "wat-[src.water_level]")
 		src.plant_sprite = image('icons/obj/hydroponics/plants_weed.dmi', "")
+		light = new /datum/light/point
+		light.attach(src)
+		light.set_brightness(1)
+		light.set_height(1)
+		light.set_color(0.7, 0.2, 1)
 		update_icon()
 
 		SPAWN_DBG(0.5 SECONDS)
@@ -141,12 +146,6 @@
 
 	disposing()
 		radio_controller.remove_object(src, "[report_freq]")
-		
-	light = new /datum/light/point
-			light.attach(src)
-			light.set_brightness(1)
-			light.set_height(1)
-			light.set_color(0.7, 0.2, 1)
 		..()
 
 	proc/post_alert(var/alert_msg)
