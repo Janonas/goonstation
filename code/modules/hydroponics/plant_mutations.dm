@@ -27,13 +27,7 @@
 
 	var/lasterr = 0
 	
-	// Glowing Plants
-	var/glow = 0	// If the plant should glow
-	var/glow_r = 0	// Redness of the glow
-	var/glow_g = 0	// Greenness of the glow
-	var/glow_b = 0	// Blueness of the glow
-	var/glow_brightness = 0	// Brightness of the glow
-	var/glow_height = 0	// Height of the glow
+	var/uvglow = 0	// If the plant should glow similliarly to the uv grow lamp
 
 	proc/HYPharvested_proc_M(var/obj/machinery/plantpot/POT, var/mob/user)
 		lasterr = 0
@@ -250,15 +244,7 @@
 	PTrange = list(100,null)
 	chance = 20
 	special_proc_override = 1
-	glow = 1
-	glow_r = 0.7
-	glow_g = 0.2
-	glow_b = 1
-	glow_brightness = 1
-	glow_height = 1
-	
-	var/light_type = null
-	var/datum/component/holdertargeting/simple_light/light_c
+	uvglow = 1
 
 	var/obj/machinery/plantpot/POT
 
@@ -267,8 +253,6 @@
 		if (.) return	
 		var/datum/plantgenes/DNAO = POT.plantgenes
 		if(!POT.dead)
-			light_c = POT.AddComponent(/datum/component/holdertargeting/simple_light, glow_r*255, glow_g*255, glow_b*255, 255 * glow_brightness)
-			light_c.update(1)
 			for (var/obj/machinery/plantpot/P in view(2,src))
 				if(!P.current || P.dead)
 					continue
