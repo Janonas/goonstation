@@ -256,6 +256,9 @@
 	glow_b = 1
 	glow_brightness = 1
 	glow_height = 1
+	
+	var/light_type = null
+	var/datum/component/holdertargeting/simple_light/light_c
 
 	var/obj/machinery/plantpot/POT
 
@@ -264,6 +267,8 @@
 		if (.) return	
 		var/datum/plantgenes/DNAO = POT.plantgenes
 		if(!POT.dead)
+			light_c = POT.AddComponent(/datum/component/holdertargeting/simple_light, col_r*255, col_g*255, col_b*255, 255 * brightness)
+			light_c.update(1)
 			for (var/obj/machinery/plantpot/P in view(2,src))
 				if(!P.current || P.dead)
 					continue
