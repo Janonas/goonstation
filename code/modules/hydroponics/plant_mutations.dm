@@ -12,7 +12,12 @@
 	var/attacked_proc_override = 0
 	var/name_prefix = ""	// Prepend to plant name
 	var/name_suffix = ""	// Append to plant name
-	var/dont_rename_crop = false	// If the crop should not be renamed based on the plant's mutation
+	var/glow = 0	// If the plant should glow
+	var/glow_r = 0	// Redness of the glow
+	var/glow_g = 0	// Greenness of the glow
+	var/glow_b = 0	// Blueness of the glow
+	var/glow_brightness = 0	// Brightness of the glow
+	var/glow_height = 0	// Height of the glow
 
 	// Ranges various genes have to be in to get the mutation to appear - lower and upper bound
 	var/list/GTrange = list(null,null) // null means there is no limit so an upper bound of 25
@@ -241,6 +246,13 @@
 	PTrange = list(75,null)
 	chance = 20
 	special_proc_override = 1
+	glow = 1
+	glow_r = 0.7
+	glow_g = 0.2
+	glow_b = 1
+	glow_brightness = 1
+	glow_height = 1
+
 	var/obj/machinery/plantpot/POT
 
 	HYPspecial_proc_M(var/obj/machinery/plantpot/POT)
@@ -274,7 +286,7 @@
 		var/datum/plantgenes/DNA = POT.plantgenes
 
 		if (POT.growth > (P.growtime - DNA.growtime) && prob(10))
-			playsound(get_turf(src), "sound/impact_sounds/Energy_Hit_3.ogg", 50, 1, -1)
+			playsound(get_turf(src), "goonstation/sound/effects/electric_shock_short.ogg", 50, 1, -1)
 
 /datum/plantmutation/sunflower/moon
 	name = "Moonflower"
