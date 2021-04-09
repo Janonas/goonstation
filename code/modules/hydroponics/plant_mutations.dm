@@ -247,7 +247,7 @@
 	iconmod = "UVSunflower"
 	dont_rename_crop = true
 	crop = /obj/item/plant/flower/uvsunflower
-	PTrange = list(75,null)
+	PTrange = list(100,null)
 	chance = 20
 	special_proc_override = 1
 	glow = 1
@@ -279,9 +279,9 @@
 	iconmod = "Stunflower"
 	dont_rename_crop = true
 	crop = /obj/item/plant/flower/stunflower
-	PTrange = list(50,null)
+	PTrange = list(75,null)
 	ENrange = list(25,null)
-	chance = 15
+	chance = 20
 	special_proc_override = 1
 	
 	HYPspecial_proc_M(var/obj/machinery/plantpot/POT)
@@ -298,7 +298,7 @@
 	iconmod = "Moonflower"
 	dont_rename_crop = true
 	crop = /obj/item/plant/flower/moonflower
-	chance = 10
+	chance = 15
 	assoc_reagents = list("sulfur")
 
 // Wheat Mutations
