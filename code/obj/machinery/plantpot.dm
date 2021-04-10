@@ -1391,9 +1391,6 @@
 		if(SDNA.mutation)
 			DNA.mutation = HY_get_mutation_from_path(SDNA.mutation.type)
 		// Copy over all genes, strains and mutations from the seed.
-		
-		if(growing.uvglow == 1):
-			light.enable()
 
 		// Finally set the harvests, make sure we always have at least one harvest,
 		// then get rid of the seed, mutate the genes a little and update the pot sprite.
@@ -1404,6 +1401,8 @@
 		HYPmutateplant(1)
 		post_alert("event_new")
 		src.recently_harvested = 0
+		if(growing.uvglow == 1):
+			light.enable()
 		update_icon()
 		update_name()
 
