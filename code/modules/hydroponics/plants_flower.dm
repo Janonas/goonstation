@@ -38,6 +38,7 @@ ABSTRACT_TYPE(/datum/plant/flower)
 	special_proc = 1 // required for the special effects of the mutations.
 	mutations = list(/datum/plantmutation/sunflower/uv,/datum/plantmutation/sunflower/stun,/datum/plantmutation/sunflower/moon)
 	assoc_reagents = list("oil")
+	commuts = list(/datum/plant_gene_strain/photosynthesis)
 
 /datum/plant/flower/rafflesia
 	name = "Rafflesia"
