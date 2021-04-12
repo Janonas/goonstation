@@ -1401,7 +1401,7 @@
 		HYPmutateplant(1)
 		post_alert("event_new")
 		src.recently_harvested = 0
-		if(growing.uvglow == 1):
+		if((growing.glow + growing.glow_override) == 1):
 			light.enable()
 		update_icon()
 		update_name()
