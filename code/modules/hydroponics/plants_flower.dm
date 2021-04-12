@@ -37,8 +37,8 @@ ABSTRACT_TYPE(/datum/plant/flower)
 	force_seed_on_harvest = 1
 	special_proc = 1 // required for the special effects of the mutations.
 	mutations = list(/datum/plantmutation/sunflower/uv,/datum/plantmutation/sunflower/stun,/datum/plantmutation/sunflower/moon)
-	assoc_reagents = list("oil")
 	commuts = list(/datum/plant_gene_strain/photosynthesis)
+	assoc_reagents = list("oil")
 
 /datum/plant/flower/rafflesia
 	name = "Rafflesia"
@@ -56,8 +56,8 @@ ABSTRACT_TYPE(/datum/plant/flower)
 	force_seed_on_harvest = 1
 	special_proc = 1
 	mutations = list()
-	assoc_reagents = list("miasma")
 	commuts = list(/datum/plant_gene_strain/resistance_drought)
+	assoc_reagents = list("miasma")
 	
 	HYPspecial_proc(var/obj/machinery/plantpot/POT)
 		..()
