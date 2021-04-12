@@ -1351,6 +1351,7 @@
 		var/datum/plant/growing = src.current
 		var/datum/plantgenes/DNA = src.plantgenes
 		var/datum/plantgenes/SDNA = SEED.plantgenes
+		var/datum/plantmutation/MUT = DNA.mutation
 
 		src.health = growing.starthealth
 
@@ -1401,7 +1402,7 @@
 		HYPmutateplant(1)
 		post_alert("event_new")
 		src.recently_harvested = 0
-		if((growing.glow + growing.glow_override) == 1):
+		if((growing.glow + MUT.glow_override) == 1):
 			light.enable()
 		update_icon()
 		update_name()
