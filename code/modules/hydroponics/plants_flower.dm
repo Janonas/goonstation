@@ -56,6 +56,7 @@ ABSTRACT_TYPE(/datum/plant/flower)
 	special_proc = 1
 	mutations = list()
 	assoc_reagents = list("miasma")
+	commuts = list(/datum/plant_gene_strain/resistance_drought)
 	
 	HYPspecial_proc(var/obj/machinery/plantpot/POT)
 		..()
