@@ -27,7 +27,7 @@
 
 	var/lasterr = 0
 	
-	var/uvglow = 0	// If the plant should glow similliarly to the uv grow lamp
+	var/glow_override = 0	// Setting this to 1 will flip the plants glow setting. if it wasnt glowing it will. if it was it wont.
 
 	proc/HYPharvested_proc_M(var/obj/machinery/plantpot/POT, var/mob/user)
 		lasterr = 0
@@ -244,7 +244,7 @@
 	PTrange = list(100,null)
 	chance = 20
 	special_proc_override = 1
-	uvglow = 1
+	glow_override = 1
 
 	var/obj/machinery/plantpot/POT
 
