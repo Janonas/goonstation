@@ -144,7 +144,7 @@
 		light.attach(src)
 		light.set_brightness(1)
 		light.set_height(1)
-		light.set_color(0.7, 0.2, 1)
+		light.set_color(1, 1, 1)
 		light.disable()
 
 		SPAWN_DBG(0.5 SECONDS)
@@ -1415,6 +1415,7 @@
 		src.recently_harvested = 0
 		if((growing.glow + MUT.glow_override) == 1):
 			light.enable()
+			light.set_color((growing.glowr + MUT.glow_change_r), (growing.glowg + MUT.glow_change_g), (growing.glowb + MUT.glow_change_b))
 		update_icon()
 		update_name()
 
