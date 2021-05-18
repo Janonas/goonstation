@@ -57,6 +57,10 @@ ABSTRACT_TYPE(/datum/plant)
 	var/lasterr = 0
 	
 	var/glow = 0	// If the plant should glow
+	// RGB values of plant light
+	var/glowr = 1
+	var/glowg = 1
+	var/glowb = 1
 
 	// fixed some runtime errors here - singh
 	// hyp procs now return 0 for success and continue, any other number for error codes
