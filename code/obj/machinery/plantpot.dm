@@ -1414,8 +1414,9 @@
 		post_alert("event_new")
 		src.recently_harvested = 0
 		if((growing.glow + MUT.glow_override) == 1):
-			light.enable()
 			light.set_color((growing.glowr + MUT.glow_change_r), (growing.glowg + MUT.glow_change_g), (growing.glowb + MUT.glow_change_b))
+			light.set_brightness(growing.glowbright + MUT.glowbright_change)
+			light.enable()
 		update_icon()
 		update_name()
 
