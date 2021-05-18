@@ -28,6 +28,10 @@
 	var/lasterr = 0
 	
 	var/glow_override = 0	// Setting this to 1 will flip the plants glow setting. if it wasnt glowing it will. if it was it wont.
+	// The mutations RGB value change from the plants default
+	var/glow_change_r = 0
+	var/glow_change_g = 0
+	var/glow_change_b = 0
 
 	proc/HYPharvested_proc_M(var/obj/machinery/plantpot/POT, var/mob/user)
 		lasterr = 0
