@@ -32,6 +32,7 @@
 	var/glow_change_r = 0
 	var/glow_change_g = 0
 	var/glow_change_b = 0
+	var/glowbright_change = 0 // Change in brightness of plant light from the default
 
 	proc/HYPharvested_proc_M(var/obj/machinery/plantpot/POT, var/mob/user)
 		lasterr = 0
