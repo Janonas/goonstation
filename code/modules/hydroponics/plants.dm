@@ -61,6 +61,8 @@ ABSTRACT_TYPE(/datum/plant)
 	var/glowr = 1
 	var/glowg = 1
 	var/glowb = 1
+	
+	var/glowbright = 1	// Brightness of plant light
 
 	// fixed some runtime errors here - singh
 	// hyp procs now return 0 for success and continue, any other number for error codes
