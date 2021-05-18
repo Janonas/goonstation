@@ -249,6 +249,9 @@
 	chance = 20
 	special_proc_override = 1
 	glow_override = 1
+	glow_change_r = -0.3
+	glow_change_g = -0.8
+	glow_change_b = 0
 
 	var/obj/machinery/plantpot/POT
 
