@@ -481,8 +481,6 @@
 			M:stamina -= 25
 			playsound(get_turf(src), "goonstation/sound/effects/sparks2.ogg ", 50, 1, -1)
 			return
-		..()
-		return
 	
 /obj/item/plant/flower/moonflower
 	name = "moonflower"
