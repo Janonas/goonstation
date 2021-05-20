@@ -861,6 +861,22 @@
 			planticon = "[growing.override_icon_state]-G[src.grow_level]"
 		else
 			planticon = "[growing.name]-G[src.grow_level]"
+			
+		if(DNA.mutation)
+			if((growing.glow + MUT.glow_override) == 1)
+				light.set_color((growing.glowr + MUT.glow_change_r), (growing.glowg + MUT.glow_change_g), (growing.glowb + MUT.glow_change_b))
+				light.set_brightness(growing.glowbright + MUT.glowbright_change)
+				light.enable()
+			else
+				light.disable()
+		else
+			if(growing.glow == 1)
+				light.set_color(growing.glowr, growing.glowg, growing.glowb)
+				light.set_brightness(growing.glowbright)
+				light.enable()
+			else
+				light.disable()
+					
 
 		src.plant_sprite.icon = iconname
 		src.plant_sprite.icon_state = planticon
@@ -1421,10 +1437,14 @@
 				light.set_brightness(growing.glowbright + SMUT.glowbright_change)
 				light.enable()
 			else
-				if(growing.glow == 1)
-					light.set_color(growing.glowr, growing.glowg, growing.glowb)
-					light.set_brightness(growing.glowbright)
-					light.enable()
+				light.disable()
+		else
+			if(growing.glow == 1)
+				light.set_color(growing.glowr, growing.glowg, growing.glowb)
+				light.set_brightness(growing.glowbright)
+				light.enable()
+			else
+				light.disable()
 
 		if(usr && ishellbanned(usr)) //Haw haw
 			growth_rate = 1
