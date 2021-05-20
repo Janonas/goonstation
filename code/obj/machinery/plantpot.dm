@@ -1362,7 +1362,7 @@
 		var/datum/plant/growing = src.current
 		var/datum/plantgenes/DNA = src.plantgenes
 		var/datum/plantgenes/SDNA = SEED.plantgenes
-		var/datum/plantmutation/MUT = DNA.mutation
+		var/datum/plantmutation/SMUT = SDNA.mutation
 
 		src.health = growing.starthealth
 
@@ -1416,9 +1416,9 @@
 		update_icon()
 		update_name()
 		if(SDNA.mutation)
-			if((growing.glow + MUT.glow_override) == 1)
-				light.set_color((growing.glowr + MUT.glow_change_r), (growing.glowg + MUT.glow_change_g), (growing.glowb + MUT.glow_change_b))
-				light.set_brightness(growing.glowbright + MUT.glowbright_change)
+			if((growing.glow + SMUT.glow_override) == 1)
+				light.set_color((growing.glowr + SMUT.glow_change_r), (growing.glowg + SMUT.glow_change_g), (growing.glowb + SMUT.glow_change_b))
+				light.set_brightness(growing.glowbright + SMUT.glowbright_change)
 				light.enable()
 			else
 				if(growing.glow == 1)
