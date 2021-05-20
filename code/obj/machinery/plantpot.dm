@@ -1422,9 +1422,9 @@
 				light.enable()
 			else
 				if(growing.glow == 1)
-				light.set_color(growing.glowr, growing.glowg, growing.glowb)
-				light.set_brightness(growing.glowbright)
-				light.enable()
+					light.set_color(growing.glowr, growing.glowg, growing.glowb)
+					light.set_brightness(growing.glowbright)
+					light.enable()
 
 		if(usr && ishellbanned(usr)) //Haw haw
 			growth_rate = 1
