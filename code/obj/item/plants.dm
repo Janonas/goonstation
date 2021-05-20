@@ -473,13 +473,13 @@
 			user.changeStatus("weakened",10)
 			user:stamina -= 25
 			user.visible_message("<span class='alert'>[user] accidentally zaps himself with the [src]!</span>")
-			playsound(get_turf(src), "goonstation/sound/effects/sparks6.ogg ", 50, 1, -1)
+			playsound(get_turf(user), "goonstation/sound/effects/sparks6.ogg ", 50, 1, -1)
 			return
 		else
 			user.visible_message("[user] attacks [M] with the [src]!")
 			M.changeStatus("weakened",10)
 			M:stamina -= 25
-			playsound(get_turf(src), "goonstation/sound/effects/sparks2.ogg ", 50, 1, -1)
+			playsound(get_turf(user), "goonstation/sound/effects/sparks2.ogg ", 50, 1, -1)
 			return
 	
 /obj/item/plant/flower/moonflower
