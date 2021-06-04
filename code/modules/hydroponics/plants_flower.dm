@@ -50,7 +50,6 @@ ABSTRACT_TYPE(/datum/plant/flower)
 	cropsize = 1
 	harvests = 1
 	isgrass = 1
-	vending = 2
 	endurance = 5
 	genome = 9
 	force_seed_on_harvest = 1
