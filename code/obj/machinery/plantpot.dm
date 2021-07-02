@@ -95,7 +95,7 @@
 	density = 1
 	mats = 2
 	deconstruct_flags = DECON_SCREWDRIVER | DECON_WRENCH | DECON_CROWBAR
-	flags = NOSPLASH
+	flags = NOSPLASH | OPENCONTAINER
 	processing_tier = PROCESSING_SIXTEENTH
 	machine_registry_idx = MACHINES_PLANTPOTS
 	var/datum/plant/current = null // What is currently growing in the plant pot
